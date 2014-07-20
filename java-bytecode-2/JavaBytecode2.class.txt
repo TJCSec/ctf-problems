@@ -1,0 +1,155 @@
+// Compiled from JavaBytecode2.java (version 1.8 : 52.0, super bit)
+public class JavaBytecode2 {
+  
+  // Field descriptor #6 [C
+  private static final char[] arr;
+  
+  // Method descriptor #8 ()V
+  // Stack: 4, Locals: 0
+  static {};
+     0  bipush 10
+     2  newarray char [5]
+     4  dup
+     5  iconst_0
+     6  bipush 114
+     8  castore
+     9  dup
+    10  iconst_1
+    11  bipush 101
+    13  castore
+    14  dup
+    15  iconst_2
+    16  bipush 97
+    18  castore
+    19  dup
+    20  iconst_3
+    21  bipush 100
+    23  castore
+    24  dup
+    25  iconst_4
+    26  bipush 99
+    28  castore
+    29  dup
+    30  iconst_5
+    31  bipush 108
+    33  castore
+    34  dup
+    35  bipush 6
+    37  bipush 97
+    39  castore
+    40  dup
+    41  bipush 7
+    43  bipush 115
+    45  castore
+    46  dup
+    47  bipush 8
+    49  bipush 115
+    51  castore
+    52  dup
+    53  bipush 9
+    55  bipush 121
+    57  castore
+    58  putstatic JavaBytecode2.arr : char[] [10]
+    61  return
+      Line numbers:
+        [pc: 0, line: 5]
+        [pc: 49, line: 6]
+        [pc: 58, line: 5]
+        [pc: 61, line: 6]
+  
+  // Method descriptor #8 ()V
+  // Stack: 1, Locals: 1
+  public JavaBytecode2();
+    0  aload_0 [this]
+    1  invokespecial java.lang.Object() [15]
+    4  return
+      Line numbers:
+        [pc: 0, line: 3]
+      Local variable table:
+        [pc: 0, pc: 5] local: this index: 0 type: JavaBytecode2
+  
+  // Method descriptor #20 ([Ljava/lang/String;)V
+  // Stack: 3, Locals: 3
+  public static void main(java.lang.String[] args);
+     0  new java.util.Scanner [21]
+     3  dup
+     4  getstatic java.lang.System.in : java.io.InputStream [23]
+     7  invokespecial java.util.Scanner(java.io.InputStream) [29]
+    10  astore_1 [a]
+    11  getstatic java.lang.System.out : java.io.PrintStream [32]
+    14  ldc <String "Enter passcode: "> [36]
+    16  invokevirtual java.io.PrintStream.print(java.lang.String) : void [38]
+    19  aload_1 [a]
+    20  invokevirtual java.util.Scanner.nextLine() : java.lang.String [44]
+    23  astore_2 [b]
+    24  aload_2 [b]
+    25  invokestatic JavaBytecode2.c(java.lang.String) : boolean [48]
+    28  ifeq 42
+    31  getstatic java.lang.System.out : java.io.PrintStream [32]
+    34  ldc <String "Success!"> [52]
+    36  invokevirtual java.io.PrintStream.println(java.lang.String) : void [54]
+    39  goto 50
+    42  getstatic java.lang.System.out : java.io.PrintStream [32]
+    45  ldc <String "Failed"> [57]
+    47  invokevirtual java.io.PrintStream.println(java.lang.String) : void [54]
+    50  return
+      Line numbers:
+        [pc: 0, line: 9]
+        [pc: 11, line: 10]
+        [pc: 19, line: 11]
+        [pc: 24, line: 12]
+        [pc: 31, line: 13]
+        [pc: 39, line: 14]
+        [pc: 42, line: 15]
+        [pc: 50, line: 17]
+      Local variable table:
+        [pc: 0, pc: 51] local: args index: 0 type: java.lang.String[]
+        [pc: 11, pc: 51] local: a index: 1 type: java.util.Scanner
+        [pc: 24, pc: 51] local: b index: 2 type: java.lang.String
+      Stack map table: number of frames 2
+        [pc: 42, append: {java.util.Scanner, java.lang.String}]
+        [pc: 50, same]
+  
+  // Method descriptor #51 (Ljava/lang/String;)Z
+  // Stack: 3, Locals: 2
+  private static boolean c(java.lang.String b);
+     0  iconst_0
+     1  istore_1 [i]
+     2  goto 34
+     5  iload_1 [i]
+     6  getstatic JavaBytecode2.arr : char[] [10]
+     9  arraylength
+    10  if_icmpge 29
+    13  getstatic JavaBytecode2.arr : char[] [10]
+    16  iload_1 [i]
+    17  caload
+    18  aload_0 [b]
+    19  iload_1 [i]
+    20  invokevirtual java.lang.String.charAt(int) : char [68]
+    23  if_icmpne 29
+    26  goto 31
+    29  iconst_0
+    30  ireturn
+    31  iinc 1 1 [i]
+    34  iload_1 [i]
+    35  aload_0 [b]
+    36  invokevirtual java.lang.String.length() : int [72]
+    39  if_icmplt 5
+    42  iconst_1
+    43  ireturn
+      Line numbers:
+        [pc: 0, line: 20]
+        [pc: 5, line: 21]
+        [pc: 26, line: 22]
+        [pc: 29, line: 24]
+        [pc: 31, line: 20]
+        [pc: 42, line: 26]
+      Local variable table:
+        [pc: 0, pc: 44] local: b index: 0 type: java.lang.String
+        [pc: 2, pc: 42] local: i index: 1 type: int
+      Stack map table: number of frames 4
+        [pc: 5, append: {int}]
+        [pc: 29, same]
+        [pc: 31, same]
+        [pc: 34, same]
+}
