@@ -1,0 +1,1 @@
+The full (dot-separated) path to the variable where [YouTube](https://www.youtube.com) stores the download urls for its videos.
