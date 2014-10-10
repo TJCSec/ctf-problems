@@ -1,0 +1,3 @@
+awesoma powa!
+
+ssh <>@<>:<>
