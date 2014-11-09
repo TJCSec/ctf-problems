@@ -1,0 +1,5 @@
+{
+    "name": "imageit",
+    "author": "sdamashek",
+    "ignore-path": ["src"]
+}
