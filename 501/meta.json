@@ -1,5 +1,5 @@
 {
     "name": "501",
     "author": "sdamashek",
-    "ignore-path": ["src","solution"]
+    "ignore-path": ["src","solution","images"]
 }
