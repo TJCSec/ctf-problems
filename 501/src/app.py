@@ -23,4 +23,4 @@ def index():
 
 if __name__ == '__main__':
     app.secret_key = 'UibnN*9b7fV(d*(8V*%d57B#$%^&daU'
-    app.run(host='0.0.0.0',debug=True)
+    app.run(host='0.0.0.0')
