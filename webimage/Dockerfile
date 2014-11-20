@@ -6,3 +6,4 @@ RUN useradd -m app
 WORKDIR /home/app
 CMD sudo -u app /usr/bin/nodejs server.js 
 ADD ./ /home/app/
+RUN chmod -R ugo-w /home/app
