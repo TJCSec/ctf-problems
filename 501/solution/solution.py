@@ -1,6 +1,9 @@
 import zbar, requests, cStringIO, pyotp
 from PIL import Image
 
+#HOST = 'http://127.0.0.1'
+HOST = 'http://tjctf-test.sdamashek.me'
+
 def get_image(name):
     im = Image.open(name).convert('L')
     width, height = im.size
@@ -23,6 +26,7 @@ s = requests.Session()
 
 for key in keys:
     totp = pyotp.TOTP(key)
-    resp = s.post('http://127.0.0.1:8081', data={'password':totp.now()}).text
+    print totp.now()
+    resp = s.post('%s:8081' % HOST, data={'password':totp.now()}).text
     print resp
     
