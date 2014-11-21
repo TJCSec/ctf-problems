@@ -11,7 +11,7 @@ def index():
         if 'level' not in session:
             session['level'] = 0
         totp = pyotp.TOTP(keys[session['level']])
-        correct = totp.verify(password) or totp.verify(password, datetime.datetime.now()-15) or totp.verify(password, datetime.datetime.now()+15) # Allow for +- 15s time skew
+        correct = totp.verify(password) or totp.verify(password, datetime.datetime.now()-datetime.timedelta(seconds=15)) or totp.verify(password, datetime.datetime.now()+datetime.timedelta(seconds=15)) # Allow for +- 15s time skew
         if not correct:
             session.pop('level',None)
             return render_template('index.html', session=session, correct=correct)
