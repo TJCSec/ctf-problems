@@ -1,0 +1,5 @@
+{
+    "name": "simple-flask",
+    "author": "sdamashek",
+    "ignore-path": ["src"]
+}
