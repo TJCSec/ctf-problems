@@ -1,1 +1,0 @@
-We intercepted some packets from <X> and found some QR codes. We have no idea what they mean... can you figure it out? We also found a website which needs a password, we think it's related to that.
