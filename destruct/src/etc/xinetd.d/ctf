@@ -1,0 +1,10 @@
+service ctf
+{
+    socket_type = stream
+    protocol = tcp
+    port = 1337
+    wait = no
+    user = app
+    instances = UNLIMITED
+    server = /home/app/destruct
+}
