@@ -2,5 +2,5 @@
     "name": "checkit",
     "author": "sdamashek",
     "description": "This problem requires proper attribution.",
-    "ignore-path": ["src"]
+    "ignore-path": ["src","static"]
 }
