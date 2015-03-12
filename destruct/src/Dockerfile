@@ -6,5 +6,5 @@ WORKDIR /home/app
 CMD sudo xinetd -dontfork
 RUN echo 'ctf       1337/tcp' >> /etc/services
 ADD ./etc/ /etc/
-ADD ./ /home/app/
+ADD ./destruct /home/app/
 
