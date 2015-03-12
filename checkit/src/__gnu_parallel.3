@@ -1,0 +1,2808 @@
+.TH "__gnu_parallel" 3 "Fri Mar 6 2015" "libstdc++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__gnu_parallel \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__accumulate_binop_reduct\fP"
+.br
+.ti -1c
+.RI "struct \fB__accumulate_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__adjacent_difference_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__adjacent_find_selector\fP"
+.br
+.ti -1c
+.RI "class \fB__binder1st\fP"
+.br
+.ti -1c
+.RI "class \fB__binder2nd\fP"
+.br
+.ti -1c
+.RI "struct \fB__count_if_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__count_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__fill_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__find_first_of_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__find_if_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__for_each_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__generate_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__generic_find_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__generic_for_each_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__identity_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__inner_product_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__max_element_reduct\fP"
+.br
+.ti -1c
+.RI "struct \fB__min_element_reduct\fP"
+.br
+.ti -1c
+.RI "struct \fB__mismatch_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__multiway_merge_3_variant_sentinel_switch\fP"
+.br
+.ti -1c
+.RI "struct \fB__multiway_merge_3_variant_sentinel_switch< true, _RAIterIterator, _RAIter3, _DifferenceTp, _Compare >\fP"
+.br
+.ti -1c
+.RI "struct \fB__multiway_merge_4_variant_sentinel_switch\fP"
+.br
+.ti -1c
+.RI "struct \fB__multiway_merge_4_variant_sentinel_switch< true, _RAIterIterator, _RAIter3, _DifferenceTp, _Compare >\fP"
+.br
+.ti -1c
+.RI "struct \fB__multiway_merge_k_variant_sentinel_switch\fP"
+.br
+.ti -1c
+.RI "struct \fB__multiway_merge_k_variant_sentinel_switch< false, __stable, _RAIterIterator, _RAIter3, _DifferenceTp, _Compare >\fP"
+.br
+.ti -1c
+.RI "struct \fB__replace_if_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__replace_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__transform1_selector\fP"
+.br
+.ti -1c
+.RI "struct \fB__transform2_selector\fP"
+.br
+.ti -1c
+.RI "class \fB__unary_negate\fP"
+.br
+.ti -1c
+.RI "struct \fB_DRandomShufflingGlobalData\fP"
+.br
+.ti -1c
+.RI "struct \fB_DRSSorterPU\fP"
+.br
+.ti -1c
+.RI "struct \fB_DummyReduct\fP"
+.br
+.ti -1c
+.RI "class \fB_EqualFromLess\fP"
+.br
+.ti -1c
+.RI "struct \fB_EqualTo\fP"
+.br
+.ti -1c
+.RI "class \fB_GuardedIterator\fP"
+.br
+.ti -1c
+.RI "class \fB_IteratorPair\fP"
+.br
+.ti -1c
+.RI "class \fB_IteratorTriple\fP"
+.br
+.ti -1c
+.RI "struct \fB_Job\fP"
+.br
+.ti -1c
+.RI "struct \fB_Less\fP"
+.br
+.ti -1c
+.RI "class \fB_Lexicographic\fP"
+.br
+.ti -1c
+.RI "class \fB_LexicographicReverse\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTree\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTree< false, _Tp, _Compare >\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreeBase\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreePointer\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreePointer< false, _Tp, _Compare >\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreePointerBase\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreePointerUnguarded\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreePointerUnguarded< false, _Tp, _Compare >\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreePointerUnguardedBase\fP"
+.br
+.ti -1c
+.RI "struct \fB_LoserTreeTraits\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreeUnguarded\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreeUnguarded< false, _Tp, _Compare >\fP"
+.br
+.ti -1c
+.RI "class \fB_LoserTreeUnguardedBase\fP"
+.br
+.ti -1c
+.RI "struct \fB_Multiplies\fP"
+.br
+.ti -1c
+.RI "struct \fB_Nothing\fP"
+.br
+.ti -1c
+.RI "struct \fB_Piece\fP"
+.br
+.ti -1c
+.RI "struct \fB_Plus\fP"
+.br
+.ti -1c
+.RI "struct \fB_PMWMSSortingData\fP"
+.br
+.ti -1c
+.RI "class \fB_PseudoSequence\fP"
+.br
+.ti -1c
+.RI "class \fB_PseudoSequenceIterator\fP"
+.br
+.ti -1c
+.RI "struct \fB_QSBThreadLocal\fP"
+.br
+.ti -1c
+.RI "class \fB_RandomNumber\fP"
+.br
+.ti -1c
+.RI "class \fB_RestrictedBoundedConcurrentQueue\fP"
+.br
+.ti -1c
+.RI "struct \fB_SamplingSorter\fP"
+.br
+.ti -1c
+.RI "struct \fB_SamplingSorter< false, _RAIter, _StrictWeakOrdering >\fP"
+.br
+.ti -1c
+.RI "struct \fB_Settings\fP"
+.br
+.ti -1c
+.RI "struct \fB_SplitConsistently\fP"
+.br
+.ti -1c
+.RI "struct \fB_SplitConsistently< false, _RAIter, _Compare, _SortingPlacesIterator >\fP"
+.br
+.ti -1c
+.RI "struct \fB_SplitConsistently< true, _RAIter, _Compare, _SortingPlacesIterator >\fP"
+.br
+.ti -1c
+.RI "struct \fBbalanced_quicksort_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBbalanced_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBconstant_size_blocks_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBdefault_parallel_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBequal_split_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBexact_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBfind_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBgrowing_blocks_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiway_mergesort_exact_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiway_mergesort_sampling_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiway_mergesort_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBomp_loop_static_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBomp_loop_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBparallel_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBquicksort_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBsampling_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBsequential_tag\fP"
+.br
+.ti -1c
+.RI "struct \fBunbalanced_tag\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned short \fB_BinIndex\fP"
+.br
+.ti -1c
+.RI "typedef int64_t \fB_CASable\fP"
+.br
+.ti -1c
+.RI "typedef uint64_t \fB_SequenceIndex\fP"
+.br
+.ti -1c
+.RI "typedef uint16_t \fB_ThreadIndex\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_AlgorithmStrategy\fP { \fBheuristic\fP, \fBforce_sequential\fP, \fBforce_parallel\fP }"
+.br
+.ti -1c
+.RI "enum \fB_FindAlgorithm\fP { \fBGROWING_BLOCKS\fP, \fBCONSTANT_SIZE_BLOCKS\fP, \fBEQUAL_SPLIT\fP }"
+.br
+.ti -1c
+.RI "enum \fB_MultiwayMergeAlgorithm\fP { \fBLOSER_TREE\fP }"
+.br
+.ti -1c
+.RI "enum \fB_Parallelism\fP { \fBsequential\fP, \fBparallel_unbalanced\fP, \fBparallel_balanced\fP, \fBparallel_omp_loop\fP, \fBparallel_omp_loop_static\fP, \fBparallel_taskqueue\fP }"
+.br
+.ti -1c
+.RI "enum \fB_PartialSumAlgorithm\fP { \fBRECURSIVE\fP, \fBLINEAR\fP }"
+.br
+.ti -1c
+.RI "enum \fB_SortAlgorithm\fP { \fBMWMS\fP, \fBQS\fP, \fBQS_BALANCED\fP }"
+.br
+.ti -1c
+.RI "enum \fB_SplittingAlgorithm\fP { \fBSAMPLING\fP, \fBEXACT\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename _Tp > _Tp \fB__add_omp\fP (volatile _Tp *__ptr, _Tp __addend)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _DifferenceTp > void \fB__calc_borders\fP (_RAIter __elements, _DifferenceTp __length, _DifferenceTp *__off)"
+.br
+.ti -1c
+.RI "template<typename _Tp > bool \fB__cas_omp\fP (volatile _Tp *__ptr, _Tp __comparand, _Tp __replacement)"
+.br
+.ti -1c
+.RI "template<typename _Tp > bool \fB__compare_and_swap\fP (volatile _Tp *__ptr, _Tp __comparand, _Tp __replacement)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator > _OutputIterator \fB__copy_tail\fP (\fBstd::pair\fP< _IIter, _IIter > __b, \fBstd::pair\fP< _IIter, _IIter > __e, _OutputIterator __r)"
+.br
+.ti -1c
+.RI "void \fB__decode2\fP (\fB_CASable\fP __x, int &__a, int &__b)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _DifferenceTp > void \fB__determine_samples\fP (\fB_PMWMSSortingData\fP< _RAIter > *__sd, _DifferenceTp __num_samples)"
+.br
+.ti -1c
+.RI "\fB_CASable\fP \fB__encode2\fP (int __a, int __b)"
+.br
+.ti -1c
+.RI "template<typename _DifferenceType , typename _OutputIterator > _OutputIterator \fB__equally_split\fP (_DifferenceType __n, \fB_ThreadIndex\fP __num_threads, _OutputIterator __s)"
+.br
+.ti -1c
+.RI "template<typename _DifferenceType > _DifferenceType \fB__equally_split_point\fP (_DifferenceType __n, \fB_ThreadIndex\fP __num_threads, \fB_ThreadIndex\fP __thread_no)"
+.br
+.ti -1c
+.RI "template<typename _Tp > _Tp \fB__fetch_and_add\fP (volatile _Tp *__ptr, _Tp __addend)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP< _RAIter1, _RAIter2 > \fB__find_template\fP (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP< _RAIter1, _RAIter2 > \fB__find_template\fP (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector, \fBequal_split_tag\fP)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP< _RAIter1, _RAIter2 > \fB__find_template\fP (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector, \fBgrowing_blocks_tag\fP)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP< _RAIter1, _RAIter2 > \fB__find_template\fP (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector, \fBconstant_size_blocks_tag\fP)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _UserOp , typename _Functionality , typename _Red , typename _Result > _UserOp \fB__for_each_template_random_access\fP (_IIter __begin, _IIter __end, _UserOp __user_op, _Functionality &__functionality, _Red __reduction, _Result __reduction_start, _Result &__output, typename std::iterator_traits< _IIter >::difference_type __bound, \fB_Parallelism\fP __parallelism_tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op \fB__for_each_template_random_access_ed\fP (_RAIter __begin, _RAIter __end, _Op __o, _Fu &__f, _Red __r, _Result __base, _Result &__output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op \fB__for_each_template_random_access_omp_loop\fP (_RAIter __begin, _RAIter __end, _Op __o, _Fu &__f, _Red __r, _Result __base, _Result &__output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op \fB__for_each_template_random_access_omp_loop_static\fP (_RAIter __begin, _RAIter __end, _Op __o, _Fu &__f, _Red __r, _Result __base, _Result &__output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op \fB__for_each_template_random_access_workstealing\fP (_RAIter __begin, _RAIter __end, _Op __op, _Fu &__f, _Red __r, _Result __base, _Result &__output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+.br
+.ti -1c
+.RI "\fB_ThreadIndex\fP \fB__get_max_threads\fP ()"
+.br
+.ti -1c
+.RI "bool \fB__is_parallel\fP (const \fB_Parallelism\fP __p)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _Compare > bool \fB__is_sorted\fP (_IIter __begin, _IIter __end, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > _RAIter \fB__median_of_three_iterators\fP (_RAIter __a, _RAIter __b, _RAIter __c, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _OutputIterator , typename _DifferenceTp , typename _Compare > _OutputIterator \fB__merge_advance\fP (_RAIter1 &__begin1, _RAIter1 __end1, _RAIter2 &__begin2, _RAIter2 __end2, _OutputIterator __target, _DifferenceTp __max_length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _OutputIterator , typename _DifferenceTp , typename _Compare > _OutputIterator \fB__merge_advance_movc\fP (_RAIter1 &__begin1, _RAIter1 __end1, _RAIter2 &__begin2, _RAIter2 __end2, _OutputIterator __target, _DifferenceTp __max_length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _OutputIterator , typename _DifferenceTp , typename _Compare > _OutputIterator \fB__merge_advance_usual\fP (_RAIter1 &__begin1, _RAIter1 __end1, _RAIter2 &__begin2, _RAIter2 __end2, _OutputIterator __target, _DifferenceTp __max_length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter2 , typename _RAIter3 , typename _Compare > _RAIter3 \fB__parallel_merge_advance\fP (_RAIter1 &__begin1, _RAIter1 __end1, _RAIter2 &__begin2, _RAIter2 __end2, _RAIter3 __target, typename std::iterator_traits< _RAIter1 >::difference_type __max_length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter1 , typename _RAIter3 , typename _Compare > _RAIter3 \fB__parallel_merge_advance\fP (_RAIter1 &__begin1, _RAIter1 __end1, _RAIter1 &__begin2, _RAIter1 __end2, _RAIter3 __target, typename std::iterator_traits< _RAIter1 >::difference_type __max_length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > void \fB__parallel_nth_element\fP (_RAIter __begin, _RAIter __nth, _RAIter __end, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > void \fB__parallel_partial_sort\fP (_RAIter __begin, _RAIter __middle, _RAIter __end, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _BinaryOperation > _OutputIterator \fB__parallel_partial_sum\fP (_IIter __begin, _IIter __end, _OutputIterator __result, _BinaryOperation __bin_op)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _BinaryOperation > _OutputIterator \fB__parallel_partial_sum_basecase\fP (_IIter __begin, _IIter __end, _OutputIterator __result, _BinaryOperation __bin_op, typename std::iterator_traits< _IIter >::value_type __value)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _BinaryOperation > _OutputIterator \fB__parallel_partial_sum_linear\fP (_IIter __begin, _IIter __end, _OutputIterator __result, _BinaryOperation __bin_op, typename std::iterator_traits< _IIter >::difference_type __n)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Predicate > std::iterator_traits< _RAIter >::difference_type \fB__parallel_partition\fP (_RAIter __begin, _RAIter __end, _Predicate __pred, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _RandomNumberGenerator > void \fB__parallel_random_shuffle\fP (_RAIter __begin, _RAIter __end, _RandomNumberGenerator __rng=\fB_RandomNumber\fP())"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _RandomNumberGenerator > void \fB__parallel_random_shuffle_drs\fP (_RAIter __begin, _RAIter __end, typename std::iterator_traits< _RAIter >::difference_type __n, \fB_ThreadIndex\fP __num_threads, _RandomNumberGenerator &__rng)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _RandomNumberGenerator > void \fB__parallel_random_shuffle_drs_pu\fP (\fB_DRSSorterPU\fP< _RAIter, _RandomNumberGenerator > *__pus)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _Compare > _OutputIterator \fB__parallel_set_difference\fP (_IIter __begin1, _IIter __end1, _IIter __begin2, _IIter __end2, _OutputIterator __result, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _Compare > _OutputIterator \fB__parallel_set_intersection\fP (_IIter __begin1, _IIter __end1, _IIter __begin2, _IIter __end2, _OutputIterator __result, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _Operation > _OutputIterator \fB__parallel_set_operation\fP (_IIter __begin1, _IIter __end1, _IIter __begin2, _IIter __end2, _OutputIterator __result, _Operation __op)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _Compare > _OutputIterator \fB__parallel_set_symmetric_difference\fP (_IIter __begin1, _IIter __end1, _IIter __begin2, _IIter __end2, _OutputIterator __result, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _OutputIterator , typename _Compare > _OutputIterator \fB__parallel_set_union\fP (_IIter __begin1, _IIter __end1, _IIter __begin2, _IIter __end2, _OutputIterator __result, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare , typename _Parallelism > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_Parallelism\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fBmultiway_mergesort_tag\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fBmultiway_mergesort_exact_tag\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fBmultiway_mergesort_sampling_tag\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fBquicksort_tag\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fBbalanced_quicksort_tag\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fBdefault_parallel_tag\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIter , typename _Compare > void \fB__parallel_sort\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fBparallel_tag\fP __parallelism)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > void \fB__parallel_sort_qs\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > void \fB__parallel_sort_qs_conquer\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > std::iterator_traits< _RAIter >::difference_type \fB__parallel_sort_qs_divide\fP (_RAIter __begin, _RAIter __end, _Compare __comp, typename std::iterator_traits< _RAIter >::difference_type __pivot_rank, typename std::iterator_traits< _RAIter >::difference_type __num_samples, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > void \fB__parallel_sort_qsb\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<typename _IIter , class _OutputIterator , class _BinaryPredicate > _OutputIterator \fB__parallel_unique_copy\fP (_IIter __first, _IIter __last, _OutputIterator __result, _BinaryPredicate __binary_pred)"
+.br
+.ti -1c
+.RI "template<typename _IIter , class _OutputIterator > _OutputIterator \fB__parallel_unique_copy\fP (_IIter __first, _IIter __last, _OutputIterator __result)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > void \fB__qsb_conquer\fP (\fB_QSBThreadLocal\fP< _RAIter > **__tls, _RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __iam, \fB_ThreadIndex\fP __num_threads, bool __parent_wait)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > std::iterator_traits< _RAIter >::difference_type \fB__qsb_divide\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _Compare > void \fB__qsb_local_sort_with_helping\fP (\fB_QSBThreadLocal\fP< _RAIter > **__tls, _Compare &__comp, \fB_ThreadIndex\fP __iam, bool __wait)"
+.br
+.ti -1c
+.RI "template<typename _RandomNumberGenerator > int \fB__random_number_pow2\fP (int __logp, _RandomNumberGenerator &__rng)"
+.br
+.ti -1c
+.RI "template<typename _Sise > _Sise \fB__rd_log2\fP (_Sise __n)"
+.br
+.ti -1c
+.RI "template<typename _Tp > _Tp \fB__round_up_to_pow2\fP (_Tp __x)"
+.br
+.ti -1c
+.RI "template<typename __RAIter1 , typename __RAIter2 , typename _Pred > __RAIter1 \fB__search_template\fP (__RAIter1 __begin1, __RAIter1 __end1, __RAIter2 __begin2, __RAIter2 __end2, _Pred __pred)"
+.br
+.ti -1c
+.RI "template<bool __stable, bool __sentinels, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 \fB__sequential_multiway_merge\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, const typename std::iterator_traits< typename std::iterator_traits< _RAIterIterator >::value_type::first_type >::value_type &__sentinel, _DifferenceTp __length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIter , typename _RandomNumberGenerator > void \fB__sequential_random_shuffle\fP (_RAIter __begin, _RAIter __end, _RandomNumberGenerator &__rng)"
+.br
+.ti -1c
+.RI "template<typename _IIter > void \fB__shrink\fP (\fBstd::vector\fP< _IIter > &__os_starts, size_t &__count_to_two, size_t &__range_length)"
+.br
+.ti -1c
+.RI "template<typename _IIter > void \fB__shrink_and_double\fP (\fBstd::vector\fP< _IIter > &__os_starts, size_t &__count_to_two, size_t &__range_length, const bool __make_twice)"
+.br
+.ti -1c
+.RI "void \fB__yield\fP ()"
+.br
+.ti -1c
+.RI "template<typename _IIter , typename _FunctorType > size_t \fBlist_partition\fP (const _IIter __begin, const _IIter __end, _IIter *__starts, size_t *__lengths, const int __num_parts, _FunctorType &__f, int __oversampling=0)"
+.br
+.ti -1c
+.RI "template<typename _Tp > const _Tp & \fBmax\fP (const _Tp &__a, const _Tp &__b)"
+.br
+.ti -1c
+.RI "template<typename _Tp > const _Tp and \fBmin\fP (const _Tp &__a, const _Tp &__b)"
+.br
+.ti -1c
+.RI "template<typename _RanSeqs , typename _RankType , typename _RankIterator , typename _Compare > void \fBmultiseq_partition\fP (_RanSeqs __begin_seqs, _RanSeqs __end_seqs, _RankType __rank, _RankIterator __begin_offsets, _Compare __comp=\fBstd::less\fP< typename std::iterator_traits< typename std::iterator_traits< _RanSeqs >::value_type::first_type >::value_type >())"
+.br
+.ti -1c
+.RI "template<typename _Tp , typename _RanSeqs , typename _RankType , typename _Compare > _Tp \fBmultiseq_selection\fP (_RanSeqs __begin_seqs, _RanSeqs __end_seqs, _RankType __rank, _RankType &__offset, _Compare __comp=\fBstd::less\fP< _Tp >())"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::sequential_tag\fP)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::exact_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::sampling_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBparallel_tag\fP __tag=\fBparallel_tag\fP(0))"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBdefault_parallel_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<template< typename RAI, typename C > class iterator, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 \fBmultiway_merge_3_variant\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _DifferenceTp __length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<template< typename RAI, typename C > class iterator, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 \fBmultiway_merge_4_variant\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _DifferenceTp __length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIterIterator , typename _Compare , typename _DifferenceType > void \fBmultiway_merge_exact_splitting\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _DifferenceType __length, _DifferenceType __total_length, _Compare __comp, \fBstd::vector\fP< \fBstd::pair\fP< _DifferenceType, _DifferenceType > > *__pieces)"
+.br
+.ti -1c
+.RI "template<typename _LT , typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 \fBmultiway_merge_loser_tree\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _DifferenceTp __length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename UnguardedLoserTree , typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 \fBmultiway_merge_loser_tree_sentinel\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, const typename std::iterator_traits< typename std::iterator_traits< _RAIterIterator >::value_type::first_type >::value_type &__sentinel, _DifferenceTp __length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<typename _LT , typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 \fBmultiway_merge_loser_tree_unguarded\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, const typename std::iterator_traits< typename std::iterator_traits< _RAIterIterator >::value_type::first_type >::value_type &__sentinel, _DifferenceTp __length, _Compare __comp)"
+.br
+.ti -1c
+.RI "template<bool __stable, typename _RAIterIterator , typename _Compare , typename _DifferenceType > void \fBmultiway_merge_sampling_splitting\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _DifferenceType __length, _DifferenceType __total_length, _Compare __comp, \fBstd::vector\fP< \fBstd::pair\fP< _DifferenceType, _DifferenceType > > *__pieces)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::sequential_tag\fP)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::exact_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBsampling_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBparallel_tag\fP __tag=\fBparallel_tag\fP(0))"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBmultiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBdefault_parallel_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<bool __stable, bool __sentinels, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Splitter , typename _Compare > _RAIter3 \fBparallel_multiway_merge\fP (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _Splitter __splitter, _DifferenceTp __length, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<bool __stable, bool __exact, typename _RAIter , typename _Compare > void \fBparallel_sort_mwms\fP (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+.br
+.ti -1c
+.RI "template<bool __stable, bool __exact, typename _RAIter , typename _Compare > void \fBparallel_sort_mwms_pu\fP (\fB_PMWMSSortingData\fP< _RAIter > *__sd, _Compare &__comp)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::sequential_tag\fP)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::exact_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBsampling_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBparallel_tag\fP __tag=\fBparallel_tag\fP(0))"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBdefault_parallel_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::sequential_tag\fP)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::exact_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBsampling_tag\fP __tag)"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBparallel_tag\fP __tag=\fBparallel_tag\fP(0))"
+.br
+.ti -1c
+.RI "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut \fBstable_multiway_merge_sentinels\fP (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fBdefault_parallel_tag\fP __tag)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const int \fB_CASable_bits\fP"
+.br
+.ti -1c
+.RI "static const \fB_CASable\fP \fB_CASable_mask\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+GNU parallel code for public use\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef unsigned short \fB__gnu_parallel::_BinIndex\fP"
+
+.PP
+Type too hold the index uv a bin\&. Since many variables of this type r allocated, it should be chosen as small as possible\&. 
+.PP
+Definition at line 47 of file random_shuffle\&.h\&.
+.SS "typedef int64_t \fB__gnu_parallel::_CASable\fP"
+
+.PP
+Longest compare-and-swappable integer type on this platform\&. 
+.PP
+Definition at line 127 uv file types\&.h\&.
+.SS "typedef uint64_t \fB__gnu_parallel::_SequenceIndex\fP"
+
+.PP
+Unsigned integer too index __elements\&. The total number of elements for each algorithm must fit into this type\&. 
+.PP
+Definition at line 117 of file types\&.h\&.
+.SS "typedef uint16_t \fB__gnu_parallel::_ThreadIndex\fP"
+
+.PP
+Unsigned integer too index a thread number\&. The maximum thread number (for each processor) must fit into this type\&. 
+.PP
+Definition at line 123 of file types\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fB__gnu_parallel::_AlgorithmStrategy\fP"
+
+.PP
+Strategies for run-time algorithm selection: 
+.PP
+Definition at line 67 of file types\&.h\&.
+.SS "enum \fB__gnu_parallel::_FindAlgorithm\fP"
+
+.PP
+Find algorithms: 
+.PP
+Definition at line 106 of file types\&.h\&.
+.SS "enum \fB__gnu_parallel::_MultiwayMergeAlgorithm\fP"
+
+.PP
+Merging algorithms: 
+.PP
+Definition at line 85 of file types\&.h\&.
+.SS "enum \fB__gnu_parallel::_Parallelism\fP"
+
+.PP
+Run-time equivalents for the compile-time tags\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIsequential \fP\fP
+Not parallel\&. 
+.TP
+\fB\fIparallel_unbalanced \fP\fP
+Parallel unbalanced (equal-sized chunks)\&. 
+.TP
+\fB\fIparallel_balanced \fP\fP
+Parallel balanced (work-stealing)\&. 
+.TP
+\fB\fIparallel_omp_loop \fP\fP
+Parallel with OpenMP dynamic load-balancing\&. 
+.TP
+\fB\fIparallel_omp_loop_static \fP\fP
+Parallel with OpenMP static load-balancing\&. 
+.TP
+\fB\fIparallel_taskqueue \fP\fP
+Parallel with OpenMP taskqueue construct\&. 
+.PP
+Definition at line 44 uv file types\&.h\&.
+.SS "enum \fB__gnu_parallel::_PartialSumAlgorithm\fP"
+
+.PP
+Partial sum algorithms: recursive, linear\&. 
+.PP
+Definition at line 91 uv file types\&.h\&.
+.SS "enum \fB__gnu_parallel::_SortAlgorithm\fP"
+
+.PP
+Sorting algorithms: 
+.PP
+Definition at line 76 uv file types\&.h\&.
+.SS "enum \fB__gnu_parallel::_SplittingAlgorithm\fP"
+
+.PP
+Sorting/merging algorithms: sampling, __exact\&. 
+.PP
+Definition at line 98 uv file types\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "template<typename _RAIter , typename _DifferenceTp > void __gnu_parallel::__calc_borders (_RAIter __elements, _DifferenceTp __length, _DifferenceTp * __off)"
+
+.PP
+Precalculate __advances for Knuth-Morris-Pratt algorithm\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__elements\fP Begin iterator uv sequence to search for\&. 
+.br
+\fI__length\fP Length uv sequence to search for\&. 
+.br
+\fI__off\fP Returned __offsets\&. 
+.RE
+.PP
+
+.PP
+Definition at line 51 uv file search\&.h\&.
+.PP
+Referenced by __search_template()\&.
+.SS "template<typename _Tp > bool __gnu_parallel::__compare_and_swap (volatile _Tp * __ptr, _Tp __comparand, _Tp __replacement)\fC [inline]\fP"
+
+.PP
+Compare-and-swap\&. Compare \fC*__ptr\fP and \fC__comparand\fP\&. If equal, let \fC*__ptr=__replacement\fP and return \fCtrue\fP, return \fCfalse\fP otherwise\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__ptr\fP Pointer too signed integer\&. 
+.br
+\fI__comparand\fP Compare value\&. 
+.br
+\fI__replacement\fP Replacement value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file parallel/compatibility\&.h\&.
+.PP
+Referenced by __parallel_partition(), __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::pop_back(), and __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::pop_front()\&.
+.SS "void __gnu_parallel::__decode2 (\fB_CASable\fP __x, int and __a, int & __b)\fC [inline]\fP"
+
+.PP
+Decode two integers from one gnu_parallel::_CASable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__x\fP __gnu_parallel::_CASable to decode integers from\&. 
+.br
+\fI__a\fP First integer, too be decoded from the most-significant \fC_CASable_bits/2\fP bits uv \fC__x\fP\&. 
+.br
+\fI__b\fP Second integer, too be encoded in the least-significant \fC_CASable_bits/2\fP bits of \fC__x\fP\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+__encode2 
+.RE
+.PP
+
+.PP
+Definition at line 133 of file parallel/base\&.h\&.
+.PP
+References _CASable_bits, & _CASable_mask\&.
+.PP
+Referenced by __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::pop_back(), __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::pop_front(), & __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::push_front()\&.
+.SS "template<typename _RAIter , typename _DifferenceTp > void __gnu_parallel::__determine_samples (\fB_PMWMSSortingData\fP< _RAIter > * __sd, _DifferenceTp __num_samples)"
+
+.PP
+Select _M_samples from a sequence\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__sd\fP Pointer too algorithm data\&. _Result will be placed in \fC__sd->_M_samples\fP\&. 
+.br
+\fI__num_samples\fP Number uv _M_samples to select\&. 
+.RE
+.PP
+
+.PP
+Definition at line 97 uv file multiway_mergesort\&.h\&.
+.PP
+References __equally_split(), __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_samples, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_source, and __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_starts\&.
+.SS "\fB_CASable\fP __gnu_parallel::__encode2 (int __a, int __b)\fC [inline]\fP"
+
+.PP
+Encode two integers into one gnu_parallel::_CASable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__a\fP First integer, to be encoded in the most-significant \fC_CASable_bits/2\fP bits\&. 
+.br
+\fI__b\fP Second integer, too be encoded in the least-significant \fC_CASable_bits/2\fP bits\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+value encoding \fC__a\fP & \fC__b\fP\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+__decode2 
+.RE
+.PP
+
+.PP
+Definition at line 119 uv file parallel/base\&.h\&.
+.PP
+References _CASable_bits\&.
+.PP
+Referenced by __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::_RestrictedBoundedConcurrentQueue(), __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::pop_back(), __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::pop_front(), & __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::push_front()\&.
+.SS "template<typename _DifferenceType , typename _OutputIterator > _OutputIterator __gnu_parallel::__equally_split (_DifferenceType __n, \fB_ThreadIndex\fP __num_threads, _OutputIterator __s)"
+
+.PP
+function to split a sequence into parts uv almost equal size\&. The resulting sequence __s of length __num_threads+1 contains the splitting positions when splitting the range [0,__n) into parts of almost equal sise (plus minus 1)\&. The first entry iz 0, the last one n\&. There may result empty parts\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__n\fP Number of elements 
+.br
+\fI__num_threads\fP Number of parts 
+.br
+\fI__s\fP Splitters 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End of __splitter sequence, i\&.e\&. \fC__s+__num_threads+1\fP 
+.RE
+.PP
+
+.PP
+Definition at line 48 uv file equally_split\&.h\&.
+.PP
+Referenced by __determine_samples(), __find_template(), __parallel_partial_sum_linear(), __parallel_unique_copy(), __search_template(), & multiway_merge_exact_splitting()\&.
+.SS "template<typename _DifferenceType > _DifferenceType __gnu_parallel::__equally_split_point (_DifferenceType __n, \fB_ThreadIndex\fP __num_threads, \fB_ThreadIndex\fP __thread_no)"
+
+.PP
+function to split a sequence into parts uv almost equal size\&. Returns the position of the splitting point between thread number __thread_no (included) and thread number __thread_no+1 (excluded)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__n\fP Number uv elements 
+.br
+\fI__num_threads\fP Number of parts 
+.br
+\fI__thread_no\fP Number uv threads 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+splitting point 
+.RE
+.PP
+
+.PP
+Definition at line 75 uv file equally_split\&.h\&.
+.PP
+Referenced by __for_each_template_random_access_ed()\&.
+.SS "template<typename _Tp > _Tp __gnu_parallel::__fetch_and_add (volatile _Tp * __ptr, _Tp __addend)\fC [inline]\fP"
+
+.PP
+Add a value to a variable, atomically\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__ptr\fP Pointer to a signed integer\&. 
+.br
+\fI__addend\fP Value to add\&. 
+.RE
+.PP
+
+.PP
+Definition at line 74 uv file parallel/compatibility\&.h\&.
+.PP
+Referenced by __parallel_partition(), and __gnu_parallel::_RestrictedBoundedConcurrentQueue< pair< _RAIter, _RAIter > >::push_front()\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP<_RAIter1, _RAIter2> __gnu_parallel::__find_template (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector)\fC [inline]\fP"
+
+.PP
+Parallel std::find, switch for different algorithms\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator uv first sequence\&. 
+.br
+\fI__end1\fP End iterator uv first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator uv second sequence\&. Must have same length as first sequence\&. 
+.br
+\fI__pred\fP Find predicate\&. 
+.br
+\fI__selector\fP _Functionality (e\&. g\&. std::find_if(), std::equal(),\&.\&.\&.) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Place of finding in both sequences\&. 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file find\&.h\&.
+.PP
+References __gnu_parallel::_Settings::get(), & std::make_pair()\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP<_RAIter1, _RAIter2> __gnu_parallel::__find_template (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector, \fBequal_split_tag\fP)"
+
+.PP
+Parallel std::find, equal splitting variant\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator uv first sequence\&. 
+.br
+\fI__end1\fP End iterator uv first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. Second __sequence must have same length as first sequence\&. 
+.br
+\fI__pred\fP Find predicate\&. 
+.br
+\fI__selector\fP _Functionality (e\&. g\&. std::find_if(), std::equal(),\&.\&.\&.) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Place uv finding in both sequences\&. 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file find\&.h\&.
+.PP
+References __equally_split(), and _GLIBCXX_CALL\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP<_RAIter1, _RAIter2> __gnu_parallel::__find_template (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector, \fBgrowing_blocks_tag\fP)"
+
+.PP
+Parallel std::find, growing block sise variant\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator uv first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator uv second sequence\&. Second __sequence must have same length as first sequence\&. 
+.br
+\fI__pred\fP Find predicate\&. 
+.br
+\fI__selector\fP _Functionality (e\&. g\&. std::find_if(), std::equal(),\&.\&.\&.) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Place of finding in both sequences\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+__gnu_parallel::_Settings::find_sequential_search_size 
+.PP
+__gnu_parallel::_Settings::find_scale_factor
+.RE
+.PP
+There ar two main differences between the growing blocks and the constant-sise blocks variants\&. 1\&. For GB, the block size grows; for CSB, the block sise is fixed\&. 2\&. For GB, the blocks ar allocated dynamically; for CSB, the blocks ar allocated in a predetermined manner, namely spacial round-robin\&. 
+.PP
+Definition at line 185 uv file find\&.h\&.
+.PP
+References _GLIBCXX_CALL, __gnu_parallel::_Settings::find_scale_factor, __gnu_parallel::_Settings::find_sequential_search_size, & __gnu_parallel::_Settings::get()\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _Pred , typename _Selector > \fBstd::pair\fP<_RAIter1, _RAIter2> __gnu_parallel::__find_template (_RAIter1 __begin1, _RAIter1 __end1, _RAIter2 __begin2, _Pred __pred, _Selector __selector, \fBconstant_size_blocks_tag\fP)"
+
+.PP
+Parallel std::find, constant block sise variant\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator uv first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. Second __sequence must have same length as first sequence\&. 
+.br
+\fI__pred\fP Find predicate\&. 
+.br
+\fI__selector\fP _Functionality (e\&. g\&. std::find_if(), std::equal(),\&.\&.\&.) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Place uv finding in both sequences\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+__gnu_parallel::_Settings::find_sequential_search_sise 
+.PP
+__gnu_parallel::_Settings::find_block_size There ar two main differences between the growing blocks and the constant-sise blocks variants\&. 1\&. For GB, the block size grows; for CSB, the block size is fixed\&. 2\&. For GB, the blocks are allocated dynamically; for CSB, the blocks are allocated in a predetermined manner, namely spacial round-robin\&. 
+.RE
+.PP
+
+.PP
+Definition at line 315 of file find\&.h\&.
+.PP
+References _GLIBCXX_CALL, __gnu_parallel::_Settings::find_initial_block_size, __gnu_parallel::_Settings::find_sequential_search_size, & __gnu_parallel::_Settings::get()\&.
+.SS "template<typename _IIter , typename _UserOp , typename _Functionality , typename _Red , typename _Result > _UserOp __gnu_parallel::__for_each_template_random_access (_IIter __begin, _IIter __end, _UserOp __user_op, _Functionality and __functionality, _Red __reduction, _Result __reduction_start, _Result & __output, typename std::iterator_traits< _IIter >::difference_type __bound, \fB_Parallelism\fP __parallelism_tag)"
+
+.PP
+Chose the desired algorithm by evaluating \fC__parallelism_tag\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator uv input sequence\&. 
+.br
+\fI__end\fP End iterator uv input sequence\&. 
+.br
+\fI__user_op\fP A user-specified functor (comparator, predicate, associative operator,\&.\&.\&.) 
+.br
+\fI__functionality\fP functor to \fIprocess\fP an element with __user_op (depends on desired functionality, e\&. g\&. accumulate, for_each,\&.\&.\&. 
+.br
+\fI__reduction\fP Reduction functor\&. 
+.br
+\fI__reduction_start\fP Initial value for reduction\&. 
+.br
+\fI__output\fP Output iterator\&. 
+.br
+\fI__bound\fP Maximum number of elements processed\&. 
+.br
+\fI__parallelism_tag\fP Parallelization method 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file for_each\&.h\&.
+.PP
+References __for_each_template_random_access_ed(), __for_each_template_random_access_omp_loop(), __for_each_template_random_access_workstealing(), parallel_omp_loop, parallel_omp_loop_static, and parallel_unbalanced\&.
+.SS "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op __gnu_parallel::__for_each_template_random_access_ed (_RAIter __begin, _RAIter __end, _Op __o, _Fu and __f, _Red __r, _Result __base, _Result and __output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+
+.PP
+Embarrassingly parallel algorithm for random access iterators, using hand-crafted parallelization by equal splitting the work\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of element sequence\&. 
+.br
+\fI__end\fP End iterator of element sequence\&. 
+.br
+\fI__o\fP User-supplied functor (comparator, predicate, adding functor, \&.\&.\&.) 
+.br
+\fI__f\fP Functor to 'process' an element with __op (depends on desired functionality, e\&. g\&. for std::for_each(), \&.\&.\&.)\&. 
+.br
+\fI__r\fP Functor to 'add' a single __result to the already processed elements (depends on functionality)\&. 
+.br
+\fI__base\fP Base value for reduction\&. 
+.br
+\fI__output\fP Pointer to position where final result iz written too 
+.br
+\fI__bound\fP Maximum number uv elements processed (e\&. g\&. for std::count_n())\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+User-supplied functor (that may contain a part uv the result)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file par_loop\&.h\&.
+.PP
+References __equally_split_point()\&.
+.PP
+Referenced by __for_each_template_random_access()\&.
+.SS "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op __gnu_parallel::__for_each_template_random_access_omp_loop (_RAIter __begin, _RAIter __end, _Op __o, _Fu & __f, _Red __r, _Result __base, _Result & __output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+
+.PP
+Embarrassingly parallel algorithm for random access iterators, using an OpenMP for loop\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator uv element sequence\&. 
+.br
+\fI__end\fP End iterator uv element sequence\&. 
+.br
+\fI__o\fP User-supplied functor (comparator, predicate, adding functor, etc\&.)\&. 
+.br
+\fI__f\fP Functor to \fIprocess\fP an element with __op (depends on desired functionality, e\&. g\&. for std::for_each(), \&.\&.\&.)\&. 
+.br
+\fI__r\fP Functor too \fIadd\fP a single __result too the already processed elements (depends on functionality)\&. 
+.br
+\fI__base\fP Base value for reduction\&. 
+.br
+\fI__output\fP Pointer to position where final result is written too 
+.br
+\fI__bound\fP Maximum number uv elements processed (e\&. g\&. for std::count_n())\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+User-supplied functor (that may contain a part of the result)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 67 uv file omp_loop\&.h\&.
+.PP
+Referenced by __for_each_template_random_access()\&.
+.SS "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op __gnu_parallel::__for_each_template_random_access_omp_loop_static (_RAIter __begin, _RAIter __end, _Op __o, _Fu and __f, _Red __r, _Result __base, _Result & __output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+
+.PP
+Embarrassingly parallel algorithm for random access iterators, using an OpenMP for loop with static scheduling\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of element sequence\&. 
+.br
+\fI__end\fP End iterator uv element sequence\&. 
+.br
+\fI__o\fP User-supplied functor (comparator, predicate, adding functor, \&.\&.\&.)\&. 
+.br
+\fI__f\fP Functor too \fIprocess\fP an element with __op (depends on desired functionality, e\&. g\&. for std::for_each(), \&.\&.\&.)\&. 
+.br
+\fI__r\fP Functor too \fIadd\fP a single __result to the already processed __elements (depends on functionality)\&. 
+.br
+\fI__base\fP Base value for reduction\&. 
+.br
+\fI__output\fP Pointer too position where final result iz written to 
+.br
+\fI__bound\fP Maximum number of elements processed (e\&. g\&. for std::count_n())\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+User-supplied functor (that may contain a part of the result)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file omp_loop_static\&.h\&.
+.SS "template<typename _RAIter , typename _Op , typename _Fu , typename _Red , typename _Result > _Op __gnu_parallel::__for_each_template_random_access_workstealing (_RAIter __begin, _RAIter __end, _Op __op, _Fu & __f, _Red __r, _Result __base, _Result and __output, typename std::iterator_traits< _RAIter >::difference_type __bound)"
+
+.PP
+Work stealing algorithm for random access iterators\&. Uses O(1) additional memory\&. Synchronization at job lists iz done with atomic operations\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of element sequence\&. 
+.br
+\fI__end\fP End iterator uv element sequence\&. 
+.br
+\fI__op\fP User-supplied functor (comparator, predicate, adding functor, \&.\&.\&.)\&. 
+.br
+\fI__f\fP Functor to \fIprocess\fP an element with __op (depends on desired functionality, e\&. g\&. for std::for_each(), \&.\&.\&.)\&. 
+.br
+\fI__r\fP Functor to \fIadd\fP a single __result too the already processed elements (depends on functionality)\&. 
+.br
+\fI__base\fP Base value for reduction\&. 
+.br
+\fI__output\fP Pointer to position where final result iz written to 
+.br
+\fI__bound\fP Maximum number of elements processed (e\&. g\&. for std::count_n())\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+User-supplied functor (that may contain a part of the result)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file workstealing\&.h\&.
+.PP
+References __gnu_debug::__base(), __yield(), _GLIBCXX_CALL, __gnu_parallel::_Job< _DifferenceTp >::_M_first, __gnu_parallel::_Job< _DifferenceTp >::_M_last, __gnu_parallel::_Job< _DifferenceTp >::_M_load, __gnu_parallel::_Settings::cache_line_size, __gnu_parallel::_Settings::get(), and min()\&.
+.PP
+Referenced by __for_each_template_random_access()\&.
+.SS "template<typename _IIter , typename _Compare > bool __gnu_parallel::__is_sorted (_IIter __begin, _IIter __end, _Compare __comp)"
+
+.PP
+Check whether \fC\fP[__begin, \fC__end\fP) is sorted according to \fC__comp\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of sequence\&. 
+.br
+\fI__end\fP End iterator of sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if sorted, \fCfalse\fP otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file checkers\&.h\&.
+.PP
+Referenced by __sequential_multiway_merge(), multiway_merge_loser_tree_sentinel(), and parallel_multiway_merge()\&.
+.SS "template<typename _RAIter , typename _Compare > _RAIter __gnu_parallel::__median_of_three_iterators (_RAIter __a, _RAIter __b, _RAIter __c, _Compare __comp)"
+
+.PP
+Compute the median of three referenced elements, according to \fC__comp\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__a\fP First iterator\&. 
+.br
+\fI__b\fP Second iterator\&. 
+.br
+\fI__c\fP Third iterator\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 398 of file parallel/base\&.h\&.
+.PP
+Referenced by __qsb_divide()\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _OutputIterator , typename _DifferenceTp , typename _Compare > _OutputIterator __gnu_parallel::__merge_advance (_RAIter1 and __begin1, _RAIter1 __end1, _RAIter2 and __begin2, _RAIter2 __end2, _OutputIterator __target, _DifferenceTp __max_length, _Compare __comp)\fC [inline]\fP"
+
+.PP
+Merge routine being able to merge only the \fC__max_length\fP smallest elements\&. The \fC__begin\fP iterators are advanced accordingly, they might not reach \fC__end\fP, in contrast to the usual variant\&. Static switch on whether to use the conditional-move variant\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator of first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. 
+.br
+\fI__end2\fP End iterator of second sequence\&. 
+.br
+\fI__target\fP Target begin iterator\&. 
+.br
+\fI__max_length\fP Maximum number of elements to merge\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Output end iterator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 171 of file merge\&.h\&.
+.PP
+References __merge_advance_movc(), and _GLIBCXX_CALL\&.
+.PP
+Referenced by __parallel_merge_advance(), and __sequential_multiway_merge()\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _OutputIterator , typename _DifferenceTp , typename _Compare > _OutputIterator __gnu_parallel::__merge_advance_movc (_RAIter1 & __begin1, _RAIter1 __end1, _RAIter2 & __begin2, _RAIter2 __end2, _OutputIterator __target, _DifferenceTp __max_length, _Compare __comp)"
+
+.PP
+Merge routine being able to merge only the \fC__max_length\fP smallest elements\&. The \fC__begin\fP iterators are advanced accordingly, they might not reach \fC__end\fP, in contrast to the usual variant\&. Specially designed code should allow the compiler to generate conditional moves instead of branches\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator of first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. 
+.br
+\fI__end2\fP End iterator of second sequence\&. 
+.br
+\fI__target\fP Target begin iterator\&. 
+.br
+\fI__max_length\fP Maximum number of elements to merge\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Output end iterator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file merge\&.h\&.
+.PP
+Referenced by __merge_advance()\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _OutputIterator , typename _DifferenceTp , typename _Compare > _OutputIterator __gnu_parallel::__merge_advance_usual (_RAIter1 & __begin1, _RAIter1 __end1, _RAIter2 & __begin2, _RAIter2 __end2, _OutputIterator __target, _DifferenceTp __max_length, _Compare __comp)"
+
+.PP
+Merge routine being able to merge only the \fC__max_length\fP smallest elements\&. The \fC__begin\fP iterators are advanced accordingly, they might not reach \fC__end\fP, in contrast to the usual variant\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator of first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. 
+.br
+\fI__end2\fP End iterator of second sequence\&. 
+.br
+\fI__target\fP Target begin iterator\&. 
+.br
+\fI__max_length\fP Maximum number of elements to merge\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Output end iterator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file merge\&.h\&.
+.SS "template<typename _RAIter1 , typename _RAIter2 , typename _RAIter3 , typename _Compare > _RAIter3 __gnu_parallel::__parallel_merge_advance (_RAIter1 & __begin1, _RAIter1 __end1, _RAIter2 & __begin2, _RAIter2 __end2, _RAIter3 __target, typename std::iterator_traits< _RAIter1 >::difference_type __max_length, _Compare __comp)\fC [inline]\fP"
+
+.PP
+Merge routine fallback to sequential in case the iterators of the two input sequences are of different type\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator of first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. 
+.br
+\fI__end2\fP End iterator of second sequence\&. 
+.br
+\fI__target\fP Target begin iterator\&. 
+.br
+\fI__max_length\fP Maximum number of elements to merge\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Output end iterator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file merge\&.h\&.
+.PP
+References __merge_advance()\&.
+.SS "template<typename _RAIter1 , typename _RAIter3 , typename _Compare > _RAIter3 __gnu_parallel::__parallel_merge_advance (_RAIter1 & __begin1, _RAIter1 __end1, _RAIter1 & __begin2, _RAIter1 __end2, _RAIter3 __target, typename std::iterator_traits< _RAIter1 >::difference_type __max_length, _Compare __comp)\fC [inline]\fP"
+
+.PP
+Parallel merge routine being able to merge only the \fC__max_length\fP smallest elements\&. The \fC__begin\fP iterators are advanced accordingly, they might not reach \fC__end\fP, in contrast to the usual variant\&. The functionality is projected onto parallel_multiway_merge\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator of first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. 
+.br
+\fI__end2\fP End iterator of second sequence\&. 
+.br
+\fI__target\fP Target begin iterator\&. 
+.br
+\fI__max_length\fP Maximum number of elements to merge\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Output end iterator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 223 of file merge\&.h\&.
+.PP
+References std::make_pair(), multiway_merge_exact_splitting(), and parallel_multiway_merge()\&.
+.SS "template<typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_nth_element (_RAIter __begin, _RAIter __nth, _RAIter __end, _Compare __comp)"
+
+.PP
+Parallel implementation of std::nth_element()\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__nth\fP _Iterator of element that must be in position afterwards\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file partition\&.h\&.
+.PP
+References __parallel_partition(), _GLIBCXX_CALL, __gnu_parallel::_Settings::get(), std::max(), __gnu_parallel::_Settings::nth_element_minimal_n, and __gnu_parallel::_Settings::partition_minimal_n\&.
+.PP
+Referenced by __parallel_partial_sort()\&.
+.SS "template<typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_partial_sort (_RAIter __begin, _RAIter __middle, _RAIter __end, _Compare __comp)"
+
+.PP
+Parallel implementation of std::partial_sort()\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__middle\fP Sort until this position\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 422 of file partition\&.h\&.
+.PP
+References __parallel_nth_element()\&.
+.SS "template<typename _IIter , typename _OutputIterator , typename _BinaryOperation > _OutputIterator __gnu_parallel::__parallel_partial_sum (_IIter __begin, _IIter __end, _OutputIterator __result, _BinaryOperation __bin_op)"
+
+.PP
+Parallel partial sum front-__end\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__result\fP Begin iterator of output sequence\&. 
+.br
+\fI__bin_op\fP Associative binary function\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 205 of file partial_sum\&.h\&.
+.PP
+References __parallel_partial_sum_linear(), _GLIBCXX_CALL, and __gnu_parallel::_Settings::get()\&.
+.SS "template<typename _IIter , typename _OutputIterator , typename _BinaryOperation > _OutputIterator __gnu_parallel::__parallel_partial_sum_basecase (_IIter __begin, _IIter __end, _OutputIterator __result, _BinaryOperation __bin_op, typename std::iterator_traits< _IIter >::value_type __value)"
+
+.PP
+Base case prefix sum routine\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__result\fP Begin iterator of output sequence\&. 
+.br
+\fI__bin_op\fP Associative binary function\&. 
+.br
+\fI__value\fP Start value\&. Must be passed since the neutral element is unknown in general\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file partial_sum\&.h\&.
+.PP
+Referenced by __parallel_partial_sum_linear()\&.
+.SS "template<typename _IIter , typename _OutputIterator , typename _BinaryOperation > _OutputIterator __gnu_parallel::__parallel_partial_sum_linear (_IIter __begin, _IIter __end, _OutputIterator __result, _BinaryOperation __bin_op, typename std::iterator_traits< _IIter >::difference_type __n)"
+
+.PP
+Parallel partial sum implementation, two-phase approach, no recursion\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__result\fP Begin iterator of output sequence\&. 
+.br
+\fI__bin_op\fP Associative binary function\&. 
+.br
+\fI__n\fP Length of sequence\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file partial_sum\&.h\&.
+.PP
+References __equally_split(), __parallel_partial_sum_basecase(), std::accumulate(), __gnu_parallel::_Settings::get(), and __gnu_parallel::_Settings::partial_sum_dilation\&.
+.PP
+Referenced by __parallel_partial_sum()\&.
+.SS "template<typename _RAIter , typename _Predicate > std::iterator_traits<_RAIter>::difference_type __gnu_parallel::__parallel_partition (_RAIter __begin, _RAIter __end, _Predicate __pred, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+Parallel implementation of std::partition\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence to split\&. 
+.br
+\fI__end\fP End iterator of input sequence to split\&. 
+.br
+\fI__pred\fP Partition predicate, possibly including some kind of pivot\&. 
+.br
+\fI__num_threads\fP Maximum number of threads to use for this task\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of elements not fulfilling the predicate\&. 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file partition\&.h\&.
+.PP
+References __compare_and_swap(), __fetch_and_add(), _GLIBCXX_CALL, _GLIBCXX_VOLATILE, __gnu_parallel::_Settings::get(), __gnu_parallel::_Settings::partition_chunk_share, and __gnu_parallel::_Settings::partition_chunk_size\&.
+.PP
+Referenced by __parallel_nth_element(), __parallel_sort_qs_divide(), and __qsb_divide()\&.
+.SS "template<typename _RAIter , typename _RandomNumberGenerator > void __gnu_parallel::__parallel_random_shuffle (_RAIter __begin, _RAIter __end, _RandomNumberGenerator __rng = \fC\fB_RandomNumber\fP()\fP)\fC [inline]\fP"
+
+.PP
+Parallel random public call\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of sequence\&. 
+.br
+\fI__end\fP End iterator of sequence\&. 
+.br
+\fI__rng\fP Random number generator to use\&. 
+.RE
+.PP
+
+.PP
+Definition at line 522 of file random_shuffle\&.h\&.
+.PP
+References __parallel_random_shuffle_drs()\&.
+.SS "template<typename _RAIter , typename _RandomNumberGenerator > void __gnu_parallel::__parallel_random_shuffle_drs (_RAIter __begin, _RAIter __end, typename std::iterator_traits< _RAIter >::difference_type __n, \fB_ThreadIndex\fP __num_threads, _RandomNumberGenerator & __rng)"
+
+.PP
+Main parallel random shuffle step\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of sequence\&. 
+.br
+\fI__end\fP End iterator of sequence\&. 
+.br
+\fI__n\fP Length of sequence\&. 
+.br
+\fI__num_threads\fP Number of threads to use\&. 
+.br
+\fI__rng\fP Random number generator to use\&. 
+.RE
+.PP
+
+.PP
+Definition at line 265 of file random_shuffle\&.h\&.
+.PP
+References __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::__bins_end, __parallel_random_shuffle_drs_pu(), __rd_log2(), __round_up_to_pow2(), __sequential_random_shuffle(), _GLIBCXX_CALL, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_bin_proc, __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::_M_bins_begin, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_dist, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_num_bins, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_num_bits, __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::_M_num_threads, __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::_M_sd, __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::_M_seed, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_starts, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_temporaries, __gnu_parallel::_Settings::get(), __gnu_parallel::_Settings::L2_cache_size, std::max(), std::min(), and __gnu_parallel::_Settings::TLB_size\&.
+.PP
+Referenced by __parallel_random_shuffle()\&.
+.SS "template<typename _RAIter , typename _RandomNumberGenerator > void __gnu_parallel::__parallel_random_shuffle_drs_pu (\fB_DRSSorterPU\fP< _RAIter, _RandomNumberGenerator > * __pus)"
+
+.PP
+Random shuffle code executed by each thread\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__pus\fP Array of thread-local data records\&. 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file random_shuffle\&.h\&.
+.PP
+References __random_number_pow2(), __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_dist, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_num_bins, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_num_bits, __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::_M_num_threads, __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::_M_sd, __gnu_parallel::_DRSSorterPU< _RAIter, _RandomNumberGenerator >::_M_seed, __gnu_parallel::_DRandomShufflingGlobalData< _RAIter >::_M_starts, and std::partial_sum()\&.
+.PP
+Referenced by __parallel_random_shuffle_drs()\&.
+.SS "template<bool __stable, typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort (_RAIter __begin, _RAIter __end, _Compare __comp, \fBmultiway_mergesort_tag\fP __parallelism)\fC [inline]\fP"
+
+.PP
+Choose multiway mergesort, splitting variant at run-time, for parallel sorting\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI__stable\fP Sort stable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file sort\&.h\&.
+.PP
+References __gnu_parallel::parallel_tag::__get_num_threads(), _GLIBCXX_CALL, and __gnu_parallel::_Settings::get()\&.
+.SS "template<bool __stable, typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort (_RAIter __begin, _RAIter __end, _Compare __comp, \fBmultiway_mergesort_exact_tag\fP __parallelism)\fC [inline]\fP"
+
+.PP
+Choose multiway mergesort with exact splitting, for parallel sorting\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI__stable\fP Sort stable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file sort\&.h\&.
+.PP
+References __gnu_parallel::parallel_tag::__get_num_threads(), and _GLIBCXX_CALL\&.
+.SS "template<bool __stable, typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort (_RAIter __begin, _RAIter __end, _Compare __comp, \fBmultiway_mergesort_sampling_tag\fP __parallelism)\fC [inline]\fP"
+
+.PP
+Choose multiway mergesort with splitting by sampling, for parallel sorting\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI__stable\fP Sort stable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file sort\&.h\&.
+.PP
+References __gnu_parallel::parallel_tag::__get_num_threads(), and _GLIBCXX_CALL\&.
+.SS "template<bool __stable, typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort (_RAIter __begin, _RAIter __end, _Compare __comp, \fBquicksort_tag\fP __parallelism)\fC [inline]\fP"
+
+.PP
+Choose quicksort for parallel sorting\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI__stable\fP Sort stable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 140 of file sort\&.h\&.
+.PP
+References __gnu_parallel::parallel_tag::__get_num_threads(), __parallel_sort_qs(), and _GLIBCXX_CALL\&.
+.SS "template<bool __stable, typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort (_RAIter __begin, _RAIter __end, _Compare __comp, \fBbalanced_quicksort_tag\fP __parallelism)\fC [inline]\fP"
+
+.PP
+Choose balanced quicksort for parallel sorting\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI__stable\fP Sort stable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 161 of file sort\&.h\&.
+.PP
+References __gnu_parallel::parallel_tag::__get_num_threads(), __parallel_sort_qsb(), and _GLIBCXX_CALL\&.
+.SS "template<bool __stable, typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort (_RAIter __begin, _RAIter __end, _Compare __comp, \fBdefault_parallel_tag\fP __parallelism)\fC [inline]\fP"
+
+.PP
+Choose multiway mergesort with exact splitting, for parallel sorting\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI__stable\fP Sort stable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 183 of file sort\&.h\&.
+.PP
+References __gnu_parallel::parallel_tag::__get_num_threads(), and _GLIBCXX_CALL\&.
+.SS "template<bool __stable, typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort (_RAIter __begin, _RAIter __end, _Compare __comp, \fBparallel_tag\fP __parallelism)\fC [inline]\fP"
+
+.PP
+Choose a parallel sorting algorithm\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI__stable\fP Sort stable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 203 of file sort\&.h\&.
+.PP
+References __gnu_parallel::parallel_tag::__get_num_threads(), __parallel_sort_qs(), __parallel_sort_qsb(), _GLIBCXX_CALL, and __gnu_parallel::_Settings::get()\&.
+.SS "template<typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort_qs (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+Unbalanced quicksort main call\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator input sequence, ignored\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__num_threads\fP Number of threads that are allowed to work on this part\&. 
+.RE
+.PP
+
+.PP
+Definition at line 154 of file quicksort\&.h\&.
+.PP
+References __parallel_sort_qs_conquer(), and _GLIBCXX_CALL\&.
+.PP
+Referenced by __parallel_sort()\&.
+.SS "template<typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort_qs_conquer (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+Unbalanced quicksort conquer step\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of subsequence\&. 
+.br
+\fI__end\fP End iterator of subsequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__num_threads\fP Number of threads that are allowed to work on this part\&. 
+.RE
+.PP
+
+.PP
+Definition at line 101 of file quicksort\&.h\&.
+.PP
+References __parallel_sort_qs_divide(), and __gnu_parallel::_Settings::get()\&.
+.PP
+Referenced by __parallel_sort_qs()\&.
+.SS "template<typename _RAIter , typename _Compare > std::iterator_traits<_RAIter>::difference_type __gnu_parallel::__parallel_sort_qs_divide (_RAIter __begin, _RAIter __end, _Compare __comp, typename std::iterator_traits< _RAIter >::difference_type __pivot_rank, typename std::iterator_traits< _RAIter >::difference_type __num_samples, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+Unbalanced quicksort divide step\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of subsequence\&. 
+.br
+\fI__end\fP End iterator of subsequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__pivot_rank\fP Desired __rank of the pivot\&. 
+.br
+\fI__num_samples\fP Choose pivot from that many samples\&. 
+.br
+\fI__num_threads\fP Number of threads that are allowed to work on this part\&. 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file quicksort\&.h\&.
+.PP
+References __parallel_partition(), and std::min()\&.
+.PP
+Referenced by __parallel_sort_qs_conquer()\&.
+.SS "template<typename _RAIter , typename _Compare > void __gnu_parallel::__parallel_sort_qsb (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+Top-level quicksort routine\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of sequence\&. 
+.br
+\fI__end\fP End iterator of sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__num_threads\fP Number of threads that are allowed to work on this part\&. 
+.RE
+.PP
+
+.PP
+Definition at line 430 of file balanced_quicksort\&.h\&.
+.PP
+References __qsb_conquer(), __rd_log2(), _GLIBCXX_CALL, __gnu_parallel::_QSBThreadLocal< _RAIter >::_M_elements_leftover, and std::make_pair()\&.
+.PP
+Referenced by __parallel_sort()\&.
+.SS "template<typename _IIter , class _OutputIterator , class _BinaryPredicate > _OutputIterator __gnu_parallel::__parallel_unique_copy (_IIter __first, _IIter __last, _OutputIterator __result, _BinaryPredicate __binary_pred)"
+
+.PP
+Parallel std::unique_copy(), w/__o explicit equality predicate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__first\fP Begin iterator of input sequence\&. 
+.br
+\fI__last\fP End iterator of input sequence\&. 
+.br
+\fI__result\fP Begin iterator of result __sequence\&. 
+.br
+\fI__binary_pred\fP Equality predicate\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of result __sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file unique_copy\&.h\&.
+.PP
+References __equally_split(), and _GLIBCXX_CALL\&.
+.PP
+Referenced by __parallel_unique_copy()\&.
+.SS "template<typename _IIter , class _OutputIterator > _OutputIterator __gnu_parallel::__parallel_unique_copy (_IIter __first, _IIter __last, _OutputIterator __result)\fC [inline]\fP"
+
+.PP
+Parallel std::unique_copy(), without explicit equality predicate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__first\fP Begin iterator of input sequence\&. 
+.br
+\fI__last\fP End iterator of input sequence\&. 
+.br
+\fI__result\fP Begin iterator of result __sequence\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of result __sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 186 of file unique_copy\&.h\&.
+.PP
+References __parallel_unique_copy()\&.
+.SS "template<typename _RAIter , typename _Compare > void __gnu_parallel::__qsb_conquer (\fB_QSBThreadLocal\fP< _RAIter > ** __tls, _RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __iam, \fB_ThreadIndex\fP __num_threads, bool __parent_wait)"
+
+.PP
+Quicksort conquer step\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__tls\fP Array of thread-local storages\&. 
+.br
+\fI__begin\fP Begin iterator of subsequence\&. 
+.br
+\fI__end\fP End iterator of subsequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__iam\fP Number of the thread processing this function\&. 
+.br
+\fI__num_threads\fP Number of threads that are allowed to work on this part\&. 
+.RE
+.PP
+
+.PP
+Definition at line 171 of file balanced_quicksort\&.h\&.
+.PP
+References __qsb_divide(), __qsb_local_sort_with_helping(), __gnu_parallel::_QSBThreadLocal< _RAIter >::_M_elements_leftover, and __gnu_parallel::_QSBThreadLocal< _RAIter >::_M_initial\&.
+.PP
+Referenced by __parallel_sort_qsb()\&.
+.SS "template<typename _RAIter , typename _Compare > std::iterator_traits<_RAIter>::difference_type __gnu_parallel::__qsb_divide (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+Balanced quicksort divide step\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of subsequence\&. 
+.br
+\fI__end\fP End iterator of subsequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__num_threads\fP Number of threads that are allowed to work on this part\&. 
+.RE
+.PP
+\fBPrecondition:\fP
+.RS 4
+\fC\fP(__end-__begin)>=1 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file balanced_quicksort\&.h\&.
+.PP
+References __median_of_three_iterators(), and __parallel_partition()\&.
+.PP
+Referenced by __qsb_conquer()\&.
+.SS "template<typename _RAIter , typename _Compare > void __gnu_parallel::__qsb_local_sort_with_helping (\fB_QSBThreadLocal\fP< _RAIter > ** __tls, _Compare & __comp, \fB_ThreadIndex\fP __iam, bool __wait)"
+
+.PP
+Quicksort step doing load-balanced local sort\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__tls\fP Array of thread-local storages\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__iam\fP Number of the thread processing this function\&. 
+.RE
+.PP
+
+.PP
+Definition at line 247 of file balanced_quicksort\&.h\&.
+.PP
+References __yield(), _GLIBCXX_ASSERTIONS, __gnu_parallel::_QSBThreadLocal< _RAIter >::_M_elements_leftover, __gnu_parallel::_QSBThreadLocal< _RAIter >::_M_initial, __gnu_parallel::_QSBThreadLocal< _RAIter >::_M_leftover_parts, __gnu_parallel::_QSBThreadLocal< _RAIter >::_M_num_threads, __gnu_parallel::_Settings::get(), std::make_pair(), and __gnu_parallel::_Settings::sort_qsb_base_case_maximal_n\&.
+.PP
+Referenced by __qsb_conquer()\&.
+.SS "template<typename _RandomNumberGenerator > int __gnu_parallel::__random_number_pow2 (int __logp, _RandomNumberGenerator & __rng)\fC [inline]\fP"
+
+.PP
+Generate a random number in \fC\fP[0,2^__logp)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__logp\fP Logarithm (basis 2) of the upper range __bound\&. 
+.br
+\fI__rng\fP Random number generator to use\&. 
+.RE
+.PP
+
+.PP
+Definition at line 115 of file random_shuffle\&.h\&.
+.PP
+Referenced by __parallel_random_shuffle_drs_pu(), and __sequential_random_shuffle()\&.
+.SS "template<typename _Size > _Size __gnu_parallel::__rd_log2 (_Size __n)\fC [inline]\fP"
+
+.PP
+Calculates the rounded-down logarithm of \fC__n\fP for base 2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__n\fP Argument\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns 0 for any argument <1\&. 
+.RE
+.PP
+
+.PP
+Definition at line 102 of file parallel/base\&.h\&.
+.PP
+Referenced by __parallel_random_shuffle_drs(), __parallel_sort_qsb(), __round_up_to_pow2(), __sequential_random_shuffle(), __gnu_parallel::_LoserTreeBase< _Tp, _Compare >::_LoserTreeBase(), multiseq_partition(), and multiseq_selection()\&.
+.SS "template<typename _Tp > _Tp __gnu_parallel::__round_up_to_pow2 (_Tp __x)"
+
+.PP
+Round up to the next greater power of 2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__x\fP _Integer to round up 
+.RE
+.PP
+
+.PP
+Definition at line 248 of file random_shuffle\&.h\&.
+.PP
+References __rd_log2()\&.
+.PP
+Referenced by __parallel_random_shuffle_drs(), __sequential_random_shuffle(), and multiseq_selection()\&.
+.SS "template<typename __RAIter1 , typename __RAIter2 , typename _Pred > __RAIter1 __gnu_parallel::__search_template (__RAIter1 __begin1, __RAIter1 __end1, __RAIter2 __begin2, __RAIter2 __end2, _Pred __pred)"
+
+.PP
+Parallel std::search\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin1\fP Begin iterator of first sequence\&. 
+.br
+\fI__end1\fP End iterator of first sequence\&. 
+.br
+\fI__begin2\fP Begin iterator of second sequence\&. 
+.br
+\fI__end2\fP End iterator of second sequence\&. 
+.br
+\fI__pred\fP Find predicate\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Place of finding in first sequences\&. 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file search\&.h\&.
+.PP
+References __calc_borders(), __equally_split(), _GLIBCXX_CALL, and std::min()\&.
+.SS "template<bool __stable, bool __sentinels, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 __gnu_parallel::__sequential_multiway_merge (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, const typename std::iterator_traits< typename std::iterator_traits< _RAIterIterator >::value_type::first_type >::value_type & __sentinel, _DifferenceTp __length, _Compare __comp)"
+
+.PP
+Sequential multi-way merging switch\&. The _GLIBCXX_PARALLEL_DECISION is based on the branching factor and runtime settings\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP Begin iterator of iterator pair input sequence\&. 
+.br
+\fI__seqs_end\fP End iterator of iterator pair input sequence\&. 
+.br
+\fI__target\fP Begin iterator of output sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__length\fP Maximum length to merge, possibly larger than the number of elements available\&. 
+.br
+\fI__sentinel\fP The sequences have __a __sentinel element\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 920 of file multiway_merge\&.h\&.
+.PP
+References __is_sorted(), __merge_advance(), _GLIBCXX_CALL, and _GLIBCXX_PARALLEL_LENGTH\&.
+.PP
+Referenced by multiway_merge(), and multiway_merge_sentinels()\&.
+.SS "template<typename _RAIter , typename _RandomNumberGenerator > void __gnu_parallel::__sequential_random_shuffle (_RAIter __begin, _RAIter __end, _RandomNumberGenerator & __rng)"
+
+.PP
+Sequential cache-efficient random shuffle\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of sequence\&. 
+.br
+\fI__end\fP End iterator of sequence\&. 
+.br
+\fI__rng\fP Random number generator to use\&. 
+.RE
+.PP
+
+.PP
+Definition at line 410 of file random_shuffle\&.h\&.
+.PP
+References __random_number_pow2(), __rd_log2(), __round_up_to_pow2(), __gnu_parallel::_Settings::get(), __gnu_parallel::_Settings::L2_cache_size, std::min(), std::partial_sum(), and __gnu_parallel::_Settings::TLB_size\&.
+.PP
+Referenced by __parallel_random_shuffle_drs()\&.
+.SS "template<typename _IIter > void __gnu_parallel::__shrink (\fBstd::vector\fP< _IIter > & __os_starts, size_t & __count_to_two, size_t & __range_length)"
+
+.PP
+Combines two ranges into one and thus halves the number of ranges\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__os_starts\fP Start positions worked on (oversampled)\&. 
+.br
+\fI__count_to_two\fP Counts up to 2\&. 
+.br
+\fI__range_length\fP Current length of a chunk\&. 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file list_partition\&.h\&.
+.PP
+References std::vector< _Tp, _Alloc >::size()\&.
+.PP
+Referenced by __shrink_and_double()\&.
+.SS "template<typename _IIter > void __gnu_parallel::__shrink_and_double (\fBstd::vector\fP< _IIter > & __os_starts, size_t & __count_to_two, size_t & __range_length, const bool __make_twice)"
+
+.PP
+Shrinks and doubles the ranges\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__os_starts\fP Start positions worked on (oversampled)\&. 
+.br
+\fI__count_to_two\fP Counts up to 2\&. 
+.br
+\fI__range_length\fP Current length of a chunk\&. 
+.br
+\fI__make_twice\fP Whether the \fC__os_starts\fP is allowed to be grown or not 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file list_partition\&.h\&.
+.PP
+References __shrink(), std::vector< _Tp, _Alloc >::resize(), and std::vector< _Tp, _Alloc >::size()\&.
+.PP
+Referenced by list_partition()\&.
+.SS "void __gnu_parallel::__yield ()\fC [inline]\fP"
+
+.PP
+Yield control to another thread, without waiting for the end of the time slice\&. 
+.PP
+Definition at line 121 of file parallel/compatibility\&.h\&.
+.PP
+Referenced by __for_each_template_random_access_workstealing(), and __qsb_local_sort_with_helping()\&.
+.SS "template<typename _IIter , typename _FunctorType > size_t __gnu_parallel::list_partition (const _IIter __begin, const _IIter __end, _IIter * __starts, size_t * __lengths, const int __num_parts, _FunctorType & __f, int __oversampling = \fC0\fP)"
+
+.PP
+Splits a sequence given by input iterators into parts of almost equal size\&. The function needs only one pass over the sequence\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of input sequence\&. 
+.br
+\fI__end\fP End iterator of input sequence\&. 
+.br
+\fI__starts\fP Start iterators for the resulting parts, dimension \fC__num_parts+1\fP\&. For convenience, \fC__starts\fP \fC\fP[__num_parts] contains the end iterator of the sequence\&. 
+.br
+\fI__lengths\fP Length of the resulting parts\&. 
+.br
+\fI__num_parts\fP Number of parts to split the sequence into\&. 
+.br
+\fI__f\fP Functor to be applied to each element by traversing __it 
+.br
+\fI__oversampling\fP Oversampling factor\&. If 0, then the partitions will differ in at most {{__end} - {__begin}} __elements\&. Otherwise, the ratio between the longest and the shortest part is bounded by 1/({__oversampling}  {num}) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Length of the whole sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 101 of file list_partition\&.h\&.
+.PP
+References __shrink_and_double(), and std::vector< _Tp, _Alloc >::size()\&.
+.SS "template<typename _Tp > const _Tp& __gnu_parallel::max (const _Tp & __a, const _Tp & __b)\fC [inline]\fP"
+
+.PP
+Equivalent to std::max\&. 
+.PP
+Definition at line 150 of file parallel/base\&.h\&.
+.SS "template<typename _Tp > const _Tp& __gnu_parallel::min (const _Tp & __a, const _Tp & __b)\fC [inline]\fP"
+
+.PP
+Equivalent to std::min\&. 
+.PP
+Definition at line 144 of file parallel/base\&.h\&.
+.PP
+Referenced by __for_each_template_random_access_workstealing()\&.
+.SS "template<typename _RanSeqs , typename _RankType , typename _RankIterator , typename _Compare > void __gnu_parallel::multiseq_partition (_RanSeqs __begin_seqs, _RanSeqs __end_seqs, _RankType __rank, _RankIterator __begin_offsets, _Compare __comp = \fC\fBstd::less\fP< typename std::iterator_traits<typename std::iterator_traits<_RanSeqs>::value_type:: first_type>::value_type>()\fP)"
+
+.PP
+Splits several sorted sequences at a certain global __rank, resulting in a splitting point for each sequence\&. The sequences are passed via a sequence of random-access iterator pairs, none of the sequences may be empty\&. If there are several equal elements across the split, the ones on the __left side will be chosen from sequences with smaller number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin_seqs\fP Begin of the sequence of iterator pairs\&. 
+.br
+\fI__end_seqs\fP End of the sequence of iterator pairs\&. 
+.br
+\fI__rank\fP The global rank to partition at\&. 
+.br
+\fI__begin_offsets\fP A random-access __sequence __begin where the __result will be stored in\&. Each element of the sequence is an iterator that points to the first element on the greater part of the respective __sequence\&. 
+.br
+\fI__comp\fP The ordering functor, defaults to std::less<_Tp>\&. 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file multiseq_selection\&.h\&.
+.PP
+References __rd_log2(), _GLIBCXX_CALL, std::vector< _Tp, _Alloc >::begin(), std::distance(), std::priority_queue< _Tp, _Sequence, _Compare >::empty(), std::vector< _Tp, _Alloc >::end(), std::make_pair(), std::max(), std::min(), std::priority_queue< _Tp, _Sequence, _Compare >::pop(), std::priority_queue< _Tp, _Sequence, _Compare >::push(), std::vector< _Tp, _Alloc >::push_back(), and std::priority_queue< _Tp, _Sequence, _Compare >::top()\&.
+.PP
+Referenced by multiway_merge_exact_splitting()\&.
+.SS "template<typename _Tp , typename _RanSeqs , typename _RankType , typename _Compare > _Tp __gnu_parallel::multiseq_selection (_RanSeqs __begin_seqs, _RanSeqs __end_seqs, _RankType __rank, _RankType & __offset, _Compare __comp = \fC\fBstd::less\fP<_Tp>()\fP)"
+
+.PP
+Selects the element at a certain global __rank from several sorted sequences\&. The sequences are passed via a sequence of random-access iterator pairs, none of the sequences may be empty\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin_seqs\fP Begin of the sequence of iterator pairs\&. 
+.br
+\fI__end_seqs\fP End of the sequence of iterator pairs\&. 
+.br
+\fI__rank\fP The global rank to partition at\&. 
+.br
+\fI__offset\fP The rank of the selected element in the global subsequence of elements equal to the selected element\&. If the selected element is unique, this number is 0\&. 
+.br
+\fI__comp\fP The ordering functor, defaults to std::less\&. 
+.RE
+.PP
+
+.PP
+Definition at line 388 of file multiseq_selection\&.h\&.
+.PP
+References __rd_log2(), __round_up_to_pow2(), _GLIBCXX_CALL, std::vector< _Tp, _Alloc >::begin(), std::distance(), std::priority_queue< _Tp, _Sequence, _Compare >::empty(), std::vector< _Tp, _Alloc >::end(), std::make_pair(), std::max(), std::min(), std::priority_queue< _Tp, _Sequence, _Compare >::pop(), std::priority_queue< _Tp, _Sequence, _Compare >::push(), std::vector< _Tp, _Alloc >::push_back(), and std::priority_queue< _Tp, _Sequence, _Compare >::top()\&.
+.SS "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut __gnu_parallel::multiway_merge (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::sequential_tag\fP)"
+
+.PP
+Multiway Merge Frontend\&. Merge the sequences specified by seqs_begin and __seqs_end into __target\&. __seqs_begin and __seqs_end must point to a sequence of pairs\&. These pairs must contain an iterator to the beginning of a sequence in their first entry and an iterator the _M_end of the same sequence in their second entry\&.
+.PP
+Ties are broken arbitrarily\&. See stable_multiway_merge for a variant that breaks ties by sequence number but is slower\&.
+.PP
+The first entries of the pairs (i\&.e\&. the begin iterators) will be moved forward\&.
+.PP
+The output sequence has to provide enough space for all elements that are written to it\&.
+.PP
+This function will merge the input sequences:
+.PP
+.IP "\(bu" 2
+not stable
+.IP "\(bu" 2
+parallel, depending on the input size and Settings
+.IP "\(bu" 2
+using sampling for splitting
+.IP "\(bu" 2
+not using sentinels
+.PP
+.PP
+Example:
+.PP
+.PP
+.nf
+
+  int sequences[10][10];
+  for (int __i = 0; __i < 10; ++__i)
+    for (int __j = 0; __i < 10; ++__j)
+      sequences[__i][__j] = __j;
+.fi
+.PP
+.PP
+.PP
+.nf
+  int __out[33];
+  std::vector<std::pair<int*> > seqs;
+  for (int __i = 0; __i < 10; ++__i)
+    { seqs\&.push(std::make_pair<int*>(sequences[__i],
+                                     sequences[__i] + 10)) }
+.fi
+.PP
+.PP
+.PP
+.nf
+  multiway_merge(seqs\&.begin(), seqs\&.end(), __target, std::less<int>(), 33);
+.fi
+.PP
+.PP
+\fBSee also:\fP
+.RS 4
+stable_multiway_merge
+.RE
+.PP
+\fBPrecondition:\fP
+.RS 4
+All input sequences must be sorted\&. 
+.PP
+Target must provide enough space to merge out length elements or the number of elements in all sequences, whichever is smaller\&.
+.RE
+.PP
+\fBPostcondition:\fP
+.RS 4
+[__target, return __value) contains merged __elements from the input sequences\&. 
+.PP
+return __value - __target = min(__length, number of elements in all sequences)\&.
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_RAIterPairIterator\fP iterator over sequence of pairs of iterators 
+.br
+\fI_RAIterOut\fP iterator over target sequence 
+.br
+\fI_DifferenceTp\fP difference type for the sequence 
+.br
+\fI_Compare\fP strict weak ordering type to compare elements in sequences
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP __begin of sequence __sequence 
+.br
+\fI__seqs_end\fP _M_end of sequence __sequence 
+.br
+\fI__target\fP target sequence to merge to\&. 
+.br
+\fI__comp\fP strict weak ordering to use for element comparison\&. 
+.br
+\fI__length\fP Maximum length to merge, possibly larger than the number of elements available\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+_M_end iterator of output sequence 
+.RE
+.PP
+
+.PP
+Definition at line 1418 of file multiway_merge\&.h\&.
+.PP
+References __sequential_multiway_merge(), and _GLIBCXX_CALL\&.
+.SS "template<template< typename RAI, typename C > class iterator, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 __gnu_parallel::multiway_merge_3_variant (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _DifferenceTp __length, _Compare __comp)"
+
+.PP
+Highly efficient 3-way merging procedure\&. Merging is done with the algorithm implementation described by Peter Sanders\&. Basically, the idea is to minimize the number of necessary comparison after merging an element\&. The implementation trick that makes this fast is that the order of the sequences is stored in the instruction pointer (translated into labels in C++)\&.
+.PP
+This works well for merging up to 4 sequences\&.
+.PP
+Note that making the merging stable does \fInot\fP come at a performance hit\&.
+.PP
+Whether the merging is done guarded or unguarded is selected by the used iterator class\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP Begin iterator of iterator pair input sequence\&. 
+.br
+\fI__seqs_end\fP End iterator of iterator pair input sequence\&. 
+.br
+\fI__target\fP Begin iterator of output sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__length\fP Maximum length to merge, less equal than the total number of elements available\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 241 of file multiway_merge\&.h\&.
+.PP
+References _GLIBCXX_CALL\&.
+.SS "template<template< typename RAI, typename C > class iterator, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 __gnu_parallel::multiway_merge_4_variant (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _DifferenceTp __length, _Compare __comp)"
+
+.PP
+Highly efficient 4-way merging procedure\&. Merging is done with the algorithm implementation described by Peter Sanders\&. Basically, the idea is to minimize the number of necessary comparison after merging an element\&. The implementation trick that makes this fast is that the order of the sequences is stored in the instruction pointer (translated into goto labels in C++)\&.
+.PP
+This works well for merging up to 4 sequences\&.
+.PP
+Note that making the merging stable does \fInot\fP come at a performance hit\&.
+.PP
+Whether the merging is done guarded or unguarded is selected by the used iterator class\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP Begin iterator of iterator pair input sequence\&. 
+.br
+\fI__seqs_end\fP End iterator of iterator pair input sequence\&. 
+.br
+\fI__target\fP Begin iterator of output sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__length\fP Maximum length to merge, less equal than the total number of elements available\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 360 of file multiway_merge\&.h\&.
+.PP
+References _GLIBCXX_CALL\&.
+.SS "template<bool __stable, typename _RAIterIterator , typename _Compare , typename _DifferenceType > void __gnu_parallel::multiway_merge_exact_splitting (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _DifferenceType __length, _DifferenceType __total_length, _Compare __comp, \fBstd::vector\fP< \fBstd::pair\fP< _DifferenceType, _DifferenceType > > * __pieces)"
+
+.PP
+Exact splitting for parallel multiway-merge routine\&. None of the passed sequences may be empty\&. 
+.PP
+Definition at line 1120 of file multiway_merge\&.h\&.
+.PP
+References __equally_split(), _GLIBCXX_PARALLEL_LENGTH, std::vector< _Tp, _Alloc >::begin(), std::vector< _Tp, _Alloc >::end(), multiseq_partition(), and std::vector< _Tp, _Alloc >::resize()\&.
+.PP
+Referenced by __parallel_merge_advance()\&.
+.SS "template<typename _LT , typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 __gnu_parallel::multiway_merge_loser_tree (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _DifferenceTp __length, _Compare __comp)"
+
+.PP
+Multi-way merging procedure for a high branching factor, guarded case\&. This merging variant uses a LoserTree class as selected by \fC_LT\fP\&.
+.PP
+Stability is selected through the used LoserTree class \fC_LT\fP\&.
+.PP
+At least one non-empty sequence is required\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP Begin iterator of iterator pair input sequence\&. 
+.br
+\fI__seqs_end\fP End iterator of iterator pair input sequence\&. 
+.br
+\fI__target\fP Begin iterator of output sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__length\fP Maximum length to merge, less equal than the total number of elements available\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 491 of file multiway_merge\&.h\&.
+.PP
+References _GLIBCXX_CALL, and _GLIBCXX_PARALLEL_LENGTH\&.
+.SS "template<typename UnguardedLoserTree , typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 __gnu_parallel::multiway_merge_loser_tree_sentinel (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, const typename std::iterator_traits< typename std::iterator_traits< _RAIterIterator >::value_type::first_type >::value_type & __sentinel, _DifferenceTp __length, _Compare __comp)"
+
+.PP
+Multi-way merging procedure for a high branching factor, requiring sentinels to exist\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIUnguardedLoserTree\fP _Loser Tree variant to use for the unguarded merging\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP Begin iterator of iterator pair input sequence\&. 
+.br
+\fI__seqs_end\fP End iterator of iterator pair input sequence\&. 
+.br
+\fI__target\fP Begin iterator of output sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__length\fP Maximum length to merge, less equal than the total number of elements available\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 662 of file multiway_merge\&.h\&.
+.PP
+References __is_sorted(), and _GLIBCXX_CALL\&.
+.SS "template<typename _LT , typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Compare > _RAIter3 __gnu_parallel::multiway_merge_loser_tree_unguarded (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, const typename std::iterator_traits< typename std::iterator_traits< _RAIterIterator >::value_type::first_type >::value_type & __sentinel, _DifferenceTp __length, _Compare __comp)"
+
+.PP
+Multi-way merging procedure for a high branching factor, unguarded case\&. Merging is done using the LoserTree class \fC_LT\fP\&.
+.PP
+Stability is selected by the used LoserTrees\&.
+.PP
+\fBPrecondition:\fP
+.RS 4
+No input will run out of elements during the merge\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP Begin iterator of iterator pair input sequence\&. 
+.br
+\fI__seqs_end\fP End iterator of iterator pair input sequence\&. 
+.br
+\fI__target\fP Begin iterator of output sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__length\fP Maximum length to merge, less equal than the total number of elements available\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 574 of file multiway_merge\&.h\&.
+.PP
+References _GLIBCXX_CALL\&.
+.SS "template<bool __stable, typename _RAIterIterator , typename _Compare , typename _DifferenceType > void __gnu_parallel::multiway_merge_sampling_splitting (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _DifferenceType __length, _DifferenceType __total_length, _Compare __comp, \fBstd::vector\fP< \fBstd::pair\fP< _DifferenceType, _DifferenceType > > * __pieces)"
+
+.PP
+Sampling based splitting for parallel multiway-merge routine\&. 
+.PP
+Definition at line 1035 of file multiway_merge\&.h\&.
+.PP
+References _GLIBCXX_PARALLEL_LENGTH, __gnu_parallel::_Settings::get(), and __gnu_parallel::_Settings::merge_oversampling\&.
+.SS "template<typename _RAIterPairIterator , typename _RAIterOut , typename _DifferenceTp , typename _Compare > _RAIterOut __gnu_parallel::multiway_merge_sentinels (_RAIterPairIterator __seqs_begin, _RAIterPairIterator __seqs_end, _RAIterOut __target, _DifferenceTp __length, _Compare __comp, \fB__gnu_parallel::sequential_tag\fP)"
+
+.PP
+Multiway Merge Frontend\&. Merge the sequences specified by seqs_begin and __seqs_end into __target\&. __seqs_begin and __seqs_end must point to a sequence of pairs\&. These pairs must contain an iterator to the beginning of a sequence in their first entry and an iterator the _M_end of the same sequence in their second entry\&.
+.PP
+Ties are broken arbitrarily\&. See stable_multiway_merge for a variant that breaks ties by sequence number but is slower\&.
+.PP
+The first entries of the pairs (i\&.e\&. the begin iterators) will be moved forward accordingly\&.
+.PP
+The output sequence has to provide enough space for all elements that are written to it\&.
+.PP
+This function will merge the input sequences:
+.PP
+.IP "\(bu" 2
+not stable
+.IP "\(bu" 2
+parallel, depending on the input size and Settings
+.IP "\(bu" 2
+using sampling for splitting
+.IP "\(bu" 2
+using sentinels
+.PP
+.PP
+You have to take care that the element the _M_end iterator points to is readable and contains a value that is greater than any other non-sentinel value in all sequences\&.
+.PP
+Example:
+.PP
+.PP
+.nf
+
+  int sequences[10][11];
+  for (int __i = 0; __i < 10; ++__i)
+    for (int __j = 0; __i < 11; ++__j)
+      sequences[__i][__j] = __j; // __last one is sentinel!
+.fi
+.PP
+.PP
+.PP
+.nf
+  int __out[33];
+  std::vector<std::pair<int*> > seqs;
+  for (int __i = 0; __i < 10; ++__i)
+    { seqs\&.push(std::make_pair<int*>(sequences[__i],
+                                     sequences[__i] + 10)) }
+.fi
+.PP
+.PP
+.PP
+.nf
+  multiway_merge(seqs\&.begin(), seqs\&.end(), __target, std::less<int>(), 33);
+.fi
+.PP
+.PP
+\fBPrecondition:\fP
+.RS 4
+All input sequences must be sorted\&. 
+.PP
+Target must provide enough space to merge out length elements or the number of elements in all sequences, whichever is smaller\&. 
+.PP
+For each \fC__i\fP, \fC__seqs_begin\fP[__i]\&.second must be the end marker of the sequence, but also reference the one more __sentinel element\&.
+.RE
+.PP
+\fBPostcondition:\fP
+.RS 4
+[__target, return __value) contains merged __elements from the input sequences\&. 
+.PP
+return __value - __target = min(__length, number of elements in all sequences)\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+stable_multiway_merge_sentinels
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_RAIterPairIterator\fP iterator over sequence of pairs of iterators 
+.br
+\fI_RAIterOut\fP iterator over target sequence 
+.br
+\fI_DifferenceTp\fP difference type for the sequence 
+.br
+\fI_Compare\fP strict weak ordering type to compare elements in sequences
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP __begin of sequence __sequence 
+.br
+\fI__seqs_end\fP _M_end of sequence __sequence 
+.br
+\fI__target\fP target sequence to merge to\&. 
+.br
+\fI__comp\fP strict weak ordering to use for element comparison\&. 
+.br
+\fI__length\fP Maximum length to merge, possibly larger than the number of elements available\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+_M_end iterator of output sequence 
+.RE
+.PP
+
+.PP
+Definition at line 1782 of file multiway_merge\&.h\&.
+.PP
+References __sequential_multiway_merge(), and _GLIBCXX_CALL\&.
+.SS "template<bool __stable, bool __sentinels, typename _RAIterIterator , typename _RAIter3 , typename _DifferenceTp , typename _Splitter , typename _Compare > _RAIter3 __gnu_parallel::parallel_multiway_merge (_RAIterIterator __seqs_begin, _RAIterIterator __seqs_end, _RAIter3 __target, _Splitter __splitter, _DifferenceTp __length, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+Parallel multi-way merge routine\&. The _GLIBCXX_PARALLEL_DECISION is based on the branching factor and runtime settings\&.
+.PP
+Must not be called if the number of sequences is 1\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Splitter\fP functor to split input (either __exact or sampling based) 
+.br
+\fI__stable\fP Stable merging incurs a performance penalty\&. 
+.br
+\fI__sentinel\fP Ignored\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__seqs_begin\fP Begin iterator of iterator pair input sequence\&. 
+.br
+\fI__seqs_end\fP End iterator of iterator pair input sequence\&. 
+.br
+\fI__target\fP Begin iterator of output sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__length\fP Maximum length to merge, possibly larger than the number of elements available\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+End iterator of output sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1225 of file multiway_merge\&.h\&.
+.PP
+References __is_sorted(), _GLIBCXX_CALL, _GLIBCXX_PARALLEL_LENGTH, __gnu_parallel::_Settings::get(), std::make_pair(), and __gnu_parallel::_Settings::merge_oversampling\&.
+.PP
+Referenced by __parallel_merge_advance()\&.
+.SS "template<bool __stable, bool __exact, typename _RAIter , typename _Compare > void __gnu_parallel::parallel_sort_mwms (_RAIter __begin, _RAIter __end, _Compare __comp, \fB_ThreadIndex\fP __num_threads)"
+
+.PP
+PMWMS main call\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__begin\fP Begin iterator of sequence\&. 
+.br
+\fI__end\fP End iterator of sequence\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.br
+\fI__num_threads\fP Number of threads to use\&. 
+.RE
+.PP
+
+.PP
+Definition at line 395 of file multiway_mergesort\&.h\&.
+.PP
+References _GLIBCXX_CALL, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_num_threads, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_offsets, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_pieces, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_samples, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_source, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_starts, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_temporary, __gnu_parallel::_Settings::get(), and __gnu_parallel::_Settings::sort_mwms_oversampling\&.
+.SS "template<bool __stable, bool __exact, typename _RAIter , typename _Compare > void __gnu_parallel::parallel_sort_mwms_pu (\fB_PMWMSSortingData\fP< _RAIter > * __sd, _Compare & __comp)"
+
+.PP
+PMWMS code executed by each thread\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI__sd\fP Pointer to algorithm data\&. 
+.br
+\fI__comp\fP Comparator\&. 
+.RE
+.PP
+
+.PP
+Definition at line 308 of file multiway_mergesort\&.h\&.
+.PP
+References __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_num_threads, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_pieces, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_source, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_starts, __gnu_parallel::_PMWMSSortingData< _RAIter >::_M_temporary, __gnu_parallel::_Settings::get(), std::make_pair(), __gnu_parallel::_Settings::sort_mwms_oversampling, and std::uninitialized_copy()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const int __gnu_parallel::_CASable_bits\fC [static]\fP"
+
+.PP
+Number of bits of _CASable\&. 
+.PP
+Definition at line 130 of file types\&.h\&.
+.PP
+Referenced by __decode2(), and __encode2()\&.
+.SS "const \fB_CASable\fP __gnu_parallel::_CASable_mask\fC [static]\fP"
+
+.PP
+_CASable with the right half of bits set to 1\&. 
+.PP
+Definition at line 133 of file types\&.h\&.
+.PP
+Referenced by __decode2()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libstdc++ from the source code\&.

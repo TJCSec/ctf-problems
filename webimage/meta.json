@@ -1,0 +1,5 @@
+{
+    "name": "webimage",
+    "author": "zwade",
+    "ignore-path": ["src"]
+}
