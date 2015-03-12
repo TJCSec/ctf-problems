@@ -1,5 +1,5 @@
 {
   "name": "Java Bytecode 1",
   "author": "Strikeskids",
-  "ignore-path": ["bin", "src"]
+  "ignore-path": ["bin", "src", "static"]
 }

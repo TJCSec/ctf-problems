@@ -1,5 +1,5 @@
 {
   "name": "destruct",
   "author": "ubuntor",
-  "ignore-path": []
+  "ignore-path": ["src","static"]
 }

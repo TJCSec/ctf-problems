@@ -1,5 +1,5 @@
 {
     "name": "division-error",
     "author": "sdamashek",
-    "ignore-path": ["src"]
+    "ignore-path": ["src","static"]
 }
