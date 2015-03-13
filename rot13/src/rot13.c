@@ -25,6 +25,8 @@ int rotinput(char* t, int size) {
 }
 
 int main() {
+    setbuf(stdout, NULL);
+
     char buf[256] = {0};
     char tmp[256] = {0};
     int end = 0;

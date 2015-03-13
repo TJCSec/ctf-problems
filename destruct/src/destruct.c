@@ -26,6 +26,8 @@ void read_in(char buf[32]) {
 }
 
 int main(int argc, const char* argv[]) {
+    setbuf(stdout, NULL);
+
     Person* p = malloc(sizeof(Person));
     memset(p,0,sizeof(Person));
     
