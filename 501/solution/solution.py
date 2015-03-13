@@ -1,8 +1,8 @@
 import zbar, requests, cStringIO, pyotp
 from PIL import Image
 
-#HOST = 'http://127.0.0.1'
-HOST = 'http://tjctf-test.sdamashek.me'
+HOST = 'http://127.0.0.1'
+#HOST = 'http://tjctf-test.sdamashek.me'
 
 def get_image(name):
     im = Image.open(name).convert('L')
