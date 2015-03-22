@@ -1,0 +1,5 @@
+{
+    "name": "Brew",
+    "author": "ubuntor",
+    "ignore-path": ["src"]
+}
