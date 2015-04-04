@@ -1,0 +1,5 @@
+{
+  "name": "steganography",
+  "author": "jamesthoughton",
+  "ignore-path": ["src", "static"]
+}
