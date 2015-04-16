@@ -2,3 +2,4 @@ RemoteSystemsTempFiles
 .metadata
 __pycache__
 *~
+*.pyc
