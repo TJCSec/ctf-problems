@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
-#include <signal.h>
 
 typedef struct P {
     char user[32];
@@ -26,14 +25,8 @@ void read_in(char buf[32]) {
     while (c != '\n' && c != EOF) c = getchar();
 }
 
-void handle_signal(int signum) {
-    if (signum == SIGHUP)
-        exit(0);
-}
-
 int main(int argc, const char* argv[]) {
     setbuf(stdout, NULL);
-    signal(SIGHUP, handle_signal);
     
     Person* p = malloc(sizeof(Person));
     memset(p,0,sizeof(Person));

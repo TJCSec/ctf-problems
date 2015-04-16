@@ -6,5 +6,5 @@ service ctf
     wait = no
     user = app
     instances = UNLIMITED
-    server = /home/app/rot13
+    server = /home/app/wrapper
 }
