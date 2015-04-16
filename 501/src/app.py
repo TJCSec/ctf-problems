@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 from flask import Flask, render_template, session, request
 import pyotp
 import datetime
