@@ -139,9 +139,13 @@ def main():
         sys.stdout.write('command: ')
         sys.stdout.flush()
 
-        command = sys.stdin.readline().strip().split()
+        command = sys.stdin.readline()
         if not command:
-            continue
+            break # EOF
+
+        command = command.strip().split()
+        if not command:
+            continue # Empty line
 
         if not loggedin:
             process_command(command)
