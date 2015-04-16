@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+
 from pwn import *
 import sys
 
