@@ -13,7 +13,11 @@ int rotinput(char* t, int size) {
     for (i = 0; i < size-1; i++) {
         c = getchar();
 
-        if (c == '\n' || c == EOF) {
+        if (c == EOF) {
+            exit(1); // Lost terminal
+        }
+
+        if (c == '\n') {
             if (c == '\n') {
                 t[i] = '\n';
                 i++;
