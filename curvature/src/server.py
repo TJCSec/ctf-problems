@@ -3,7 +3,7 @@
 import SocketServer, threading
 
 PORT = 8089
-FLAG = int("3llipt1c_curv3_mas7tr".encode("hex"),16) # Find me!
+FLAG = int("y0u're_th3_3llipt1c_curv3_mas7tr".encode("hex"),16) # Find me!
 
 A = 0x7D5A0975FC2C3057EEF67530417AFFE7FB8055C126DC5C6CE94A4B44F330B5D9
 B = 0x26DC5C6CE94A4B44F330B5D9BBD77CBF958416295CF7E1CE6BCCDC18FF8C07B6
