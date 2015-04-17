@@ -4,7 +4,7 @@ from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
 from time import time
 
 PORT = 8080
-FLAG = "l0v3ly-cup-0-c0ff33!"
+FLAG = "insert-flag-here"
 
 # type, brew time
 teas = {'/ceylon': 240,
