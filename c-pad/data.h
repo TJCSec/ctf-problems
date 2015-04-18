@@ -5,11 +5,11 @@
 #define CAPVAL 1
 
 typedef enum action_e {
-	INVALID_ACTION, READ_ACTION, EXEC_ACTION, LOGIN_ACTION, STATUS_ACTION, SMILEY_ACTION;
+	INVALID_ACTION, READ_ACTION, EXEC_ACTION, LOGIN_ACTION, STATUS_ACTION, SMILEY_ACTION
 } action_t;
 
 typedef enum status_e {
-	SUCCESS, FAILURE;
+	SUCCESS, FAILURE
 } status_t;
 
 typedef struct query_s {

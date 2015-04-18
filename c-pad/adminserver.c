@@ -11,12 +11,12 @@ FILE *worker;
 int sworker[2], rworker[2];
 
 int readQuery(query_t *query) {
-	printf(">> ")
+	printf(">> ");
 	getline(&lineptr, &linesize, stdin);
 	char *actionText, *userText, *indata;
 	action_t action;
 	long userid;
-	char data[charsleft];
+	char data[0x100];
 
 	action = INVALID_ACTION;
 	actionText = strtok(lineptr, " ");
@@ -24,7 +24,7 @@ int readQuery(query_t *query) {
 	indata = strtok(NULL, "");
 
 	if (!strcasecmp("read", actionText)) {
-		action = READ_ACTION
+		action = READ_ACTION;
 	} else if (!strcasecmp("exec", actionText)) {
 		action = EXEC_ACTION;
 	} else if (!strcasecmp("login", actionText)) {
@@ -36,19 +36,19 @@ int readQuery(query_t *query) {
 	}
 
 	if (action == INVALID_ACTION) {
-		print("The action you entered was not recognized\n");
+		printf("The action you entered was not recognized\n");
 		return 1;
 	}
 
-	userid = strtol(userText);
+	userid = strtol(userText, NULL, 10);
 
 	snprintf(data, 0x100, "FROM %ld;%s", userid, indata);
 
 	query->action = action;
 	query->userid = userid;
-	query->data = data;
+	memcpy(query->data, data, 0x100);
 
-	print("Parsed query...\n");
+	printf("Parsed query...\n");
 
 	return 0;
 }
@@ -61,7 +61,7 @@ int setupWorker() {
 		fprintf(stderr, "Failed to create worker");
 	}
 	if (!pipe(sworker) || !pipe(rworker)) {
-		fprintf(stderr, "Failed to create pipe")
+		fprintf(stderr, "Failed to create pipe");
 		exit(1);
 		return 1;
 	}
@@ -111,11 +111,11 @@ int run() {
 		sendQuery(&query);
 		recvResponse(&response);
 
-		if (query->action == LOGIN_ACTION && response->status == SUCCESS) {
-			query.credentials = strtod(response->data);
+		if (query.action == LOGIN_ACTION && response.status == SUCCESS) {
+			query.credentials = strtod(response.data, NULL);
 		}
 
-		writeReponse(&response);
+		writeResponse(&response);
 	}
 
 	return 0;
