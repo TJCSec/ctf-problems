@@ -1,9 +1,28 @@
 # TJCTF Problems
 
-Upload your problems as markdown files. Each problem gets its own directory
+In order to prepare for TJCTF, we need to get all problems into the proper format. This requires two main things, a manifest and a grader. First the grader, in the root directory of your problem, create a folder named `grader/`. Inside `grader/`, create a file named `grader.py`. This should be a python file with a function grade. For example, a problem with only one correct answer would look like
 
-Name the your problem file the same as its containing directory. Put the resources that your problem needs in that directory.
+```python
+def grade(arg, key):
+  if "this_is_the_flag" in key:
+    return True, "Correct"
+  else:
+    return False, "Incorrect"
+```
 
-Answer the problem with a file called answer in the project directory. Put a json file with your author information called meta.json in the directory as well.
+As you can see, it should return a tuple with the first item being the "correctness" of the problem, and the second being a message to the player after they submit. Now, again in the root directory of your project create a file named `problem.json` it should be of the format:
 
-We will have the ability for people to write "graders" for their problems that may not have one unique correct answer.
+```javascript
+{
+  "name": "<<Problem Name>>",
+  "score": "<<this will be finalized after testing>>",
+  "category": "<<Crypto || Web || Binary || Misc>>" ,
+  "grader": "<<foldername>>/grader.py",                   //note the absence of the /grader/ directory. This is INTENTIONAL
+  "description": "Problem text. HTML can be used here.",
+  "threshold": 0,                                         //we will not use these unless we want to have multiple "levels"
+  "weightmap": {},
+  "hint": "Hint text. HTML can be used here"
+}
+```
+
+If you have any questions, reference https://github.com/picoCTF/picoCTF-Platform-2
