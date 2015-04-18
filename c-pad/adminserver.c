@@ -7,6 +7,8 @@
 char *lineptr = NULL;
 size_t linesize = 0;
 
+const int cap[1] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
+
 FILE *worker;
 int sworker[2], rworker[2];
 
@@ -52,8 +54,6 @@ int readQuery(query_t *query) {
 
 	return 0;
 }
-
-int cap[1] = { CAPVAL };
 
 int setupWorker() {
 	worker = popen("./worker", "w");

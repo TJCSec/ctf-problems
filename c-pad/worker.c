@@ -8,7 +8,7 @@ double ACCESS;
 
 int sparent[2], rparent[2];
 
-int cap[1] = { CAPVAL };
+const int cap[4] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
 
 int recvQuery(query_t *query) {
 	char capbuf[100];
