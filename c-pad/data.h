@@ -13,7 +13,6 @@ typedef enum status_e {
 } status_t;
 
 typedef struct query_s {
-	long magic;
 	action_t action;
 	double credentials;
 	long userid;
