@@ -72,14 +72,14 @@ int setupWorker() {
 }
 
 int sendQuery(query_t *query) {
-	write(sworker[1], query, sizeof(query));
+	write(sworker[1], query, sizeof(query_t));
 	write(sworker[1], cap, sizeof(cap));
 	return 0;
 }
 
 int recvResponse(response_t *response) {
 	char capbuf[100];
-	read(rworker[0], response, sizeof(response));
+	read(rworker[0], response, sizeof(response_t));
 	read(rworker[0], capbuf, 100);
 
 	return 0;
@@ -101,6 +101,8 @@ int run() {
 	query_t query;
 	response_t response;
 
+	query.credentials = 0.0;
+
 	while (1) {
 		if (readQuery(&query)) {
 			continue;
@@ -108,6 +110,10 @@ int run() {
 
 		sendQuery(&query);
 		recvResponse(&response);
+
+		if (query->action == LOGIN_ACTION && response->status == SUCCESS) {
+			query.credentials = strtod(response->data);
+		}
 
 		writeReponse(&response);
 	}
