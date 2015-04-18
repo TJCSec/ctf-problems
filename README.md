@@ -12,10 +12,10 @@ def grade(arg, key):
 
 As you can see, it should return a tuple with the first item being the "correctness" of the problem, and the second being a message to the player after they submit. Now, again in the root directory of your project create a file named `problem.json` it should be of the format:
 
-```json
+```javascript
 {
   "name": "<<Problem Name>>",
-  "score": <<this will be finalized after testing>>,
+  "score": "<<this will be finalized after testing>>",
   "category": "<<Crypto || Web || Binary || Misc>>" ,
   "grader": "<<foldername>>/grader.py",                   //note the absence of the /grader/ directory. This is INTENTIONAL
   "description": "Problem text. HTML can be used here.",
