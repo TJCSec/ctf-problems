@@ -1,0 +1,5 @@
+{
+  "name": "BuzzwordFactory",
+  "author": "fwilson",
+  "ignore-path": ["src","static"]
+}
