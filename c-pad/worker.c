@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 #include "data.h"
 
 double ACCESS;
@@ -18,13 +20,14 @@ int recvQuery(query_t *query) {
 
 int sendResponse(response_t *response) {
 	write(sparent[1], response, sizeof(response_t));
-	write(sparent[1], cap, sizeof(cap);
+	write(sparent[1], cap, sizeof(cap));
 
 	return 0;
 }
 
 int parseData(query_t *query, char *data) {
-	char *prebuf = strtok(query->data, ";"); // Read the "FROM <id>;" part
+	char *prebuf;
+	prebuf = strtok(query->data, ";"); // Read the "FROM <id>;" part
 
 	data = strtok(NULL, "");
 
@@ -37,7 +40,7 @@ int checkCredentials(query_t *query) {
 
 int needPermissions(response_t *response) {
 	response->status = FAILURE;
-	response->data = "You need the requisite authentication to perform this action";
+	snprintf(response->data, 0x100, "%s", "You need the requisite authentication to perform this action");
 
 	return 0;
 }
@@ -51,7 +54,7 @@ int handleRead(query_t *query, response_t *response) {
 
 	if (access(fname, R_OK) == -1) {
 		response->status = FAILURE;
-		response->data = "Unable to read file";
+		snprintf(response->data, 0x100, "%s", "Unable to read file");
 
 		return 0;
 	}
@@ -68,7 +71,7 @@ int handleRead(query_t *query, response_t *response) {
 
 int handleExec(query_t *query, response_t *response) {
 	if (!checkCredentials(query))
-		return needPermsissions(response);
+		return needPermissions(response);
 
 	char command[0x100];
 	parseData(query, command);
@@ -84,11 +87,11 @@ int handleExec(query_t *query, response_t *response) {
 int handleLogin(query_t *query, response_t *response) {
 	char fname[0x100];
 
-	sprintf(fname, "password.%d.txt", query->userid);
+	sprintf(fname, "password.%ld.txt", query->userid);
 
 	if (access(fname, R_OK) == -1) {
 		response->status = FAILURE;
-		response->data = "Invalid username or password";
+		snprintf(response->data, 0x100, "%s", "Invalid username or password");
 
 		return 0;
 	}
@@ -115,14 +118,14 @@ int handleLogin(query_t *query, response_t *response) {
 		response->status = SUCCESS;
 	} else {
 		response->status = FAILURE;
-		response->data = "Invalid username or password";
+		snprintf(response->data, 0x100, "%s", "Invalid username or password");
 	}
 
 	return 0;
 }
 
 int handleStatus(query_t *query, response_t *response) {
-	query->data = "FROM STATUS;status.txt";
+	snprintf(query->data, 0x100, "FROM STATUS;status.txt");
 	query->credentials = 1.0/0.0;
 
 	return handleRead(query, response);
@@ -140,11 +143,11 @@ int handle(query_t *query, response_t *response) {
 			return handleStatus(query, response);
 		case SMILEY_ACTION:
 			response->status = SUCCESS;
-			response->data = "You are a star! :)";
+			snprintf(response->data, 0x100, "%s", "You are a star! :)");
 			return 0;
 		default:
 			response->status = FAILURE;
-			response->data = "Command not implemented";
+			snprintf(response->data, 0x100, "%s", "Command not implemented");
 			return 0;
 	}
 }
@@ -167,7 +170,7 @@ int setupAccess() {
 	FILE *afile = fopen("access.txt", "r");
 	int num = fread(buf, 1, 0xff, afile);
 	buf[num] = '\0';
-	ACCESS = strtod(buf);
+	ACCESS = strtod(buf, NULL);
 	fclose(afile);
 
 	return 0;
