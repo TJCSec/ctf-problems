@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "data.h"
+#include "msgstructs.h"
 
 char *lineptr = NULL;
 size_t linesize = 0;

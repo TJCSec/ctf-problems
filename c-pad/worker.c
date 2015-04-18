@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "data.h"
+#include "msgstructs.h"
 
 double ACCESS;
 
