@@ -56,6 +56,13 @@ int handleRead(query_t *query, response_t *response) {
 
 	char *fname = parseData(query);
 
+	if (strstr(fname, "flag")) {
+		response->status = FAILURE;
+		snprintf(response->data, 0x100, "Don't want to make it too easy...");
+
+		return 0;
+	}
+
 	if (access(fname, R_OK) == -1) {
 		response->status = FAILURE;
 		snprintf(response->data, 0x100, "Unable to read %s because %d", fname, errno);
@@ -158,7 +165,7 @@ int handle(query_t *query, response_t *response) {
 				"read <file>\n"
 				"smiley\n"
 				"exec <command>\n"
-				"login <userid> <password>\n"
+				"login <userid> <password>"
 			);
 			return 0;
 		default:
