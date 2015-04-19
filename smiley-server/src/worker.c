@@ -9,21 +9,25 @@
 
 double ACCESS;
 
-int sparent, rparent;
+char wpipe[100], rpipe[100];
 
 const int cap[] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
 
 int recvQuery(query_t *query) {
+	FILE *file = fopen(rpipe, "r");
 	char capbuf[100];
-	read(rparent, query, sizeof(query_t));
-	read(rparent, capbuf, 100);
+	fread(query, sizeof(query_t), 1, file);
+	fread(capbuf, 1, 100, file);
+	fclose(file);
 
 	return 0;
 }
 
 int sendResponse(response_t *response) {
-	write(sparent, response, sizeof(response_t));
-	write(sparent, cap, sizeof(cap));
+	FILE *file = fopen(wpipe, "w");
+	fwrite(response, sizeof(response_t), 1, file);
+	fwrite(cap, 1, sizeof(cap), file);
+	fclose(file);
 
 	return 0;
 }
@@ -131,6 +135,9 @@ int handleStatus(query_t *query, response_t *response) {
 
 int handle(query_t *query, response_t *response) {
 	switch (query->action) {
+		case EXIT_ACTION:
+			exit(0);
+			return 1;
 		case READ_ACTION:
 			return handleRead(query, response);
 		case EXEC_ACTION:
@@ -175,6 +182,11 @@ int run() {
 	return 0;
 }
 
+int setupPipes() {
+	fscanf(stdin, "%s %s", rpipe, wpipe);
+	return 0;
+}
+
 int setupAccess() {
 	char buf[0x100];
 	FILE *afile = fopen("access.txt", "r");
@@ -186,16 +198,10 @@ int setupAccess() {
 	return 0;
 }
 
-int setupPipes() {
-	rparent = open("/tmp/servto.fifo", O_RDONLY);
-	sparent = open("/tmp/servfr.fifo", O_WRONLY);
-
-	return 0;
-}
-
 int main(int argc, char **argv) {
-	setupAccess();
+	freopen("/dev/null", "w", stdout);
 	setupPipes();
+	setupAccess();
 
 	return run();
 }
