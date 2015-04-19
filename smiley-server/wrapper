@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# For individuals without docker to run the program
+
+pushd src
+./adminserver
+popd
