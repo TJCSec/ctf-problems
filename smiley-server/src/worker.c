@@ -158,8 +158,7 @@ int handle(query_t *query, response_t *response) {
 				"read <file>\n"
 				"smiley\n"
 				"exec <command>\n"
-				"login <password> # Login to the current user\n"
-				"user <userid> # Sets the current user"
+				"login <userid> <password>\n"
 			);
 			return 0;
 		default:

@@ -49,8 +49,6 @@ int readQuery(query_t *query) {
 		action = SMILEY_ACTION;
 	} else if (!strcasecmp("help", actionText)) {
 		action = HELP_ACTION;
-	} else if (!strcasecmp("user", actionText)) {
-		action = USER_ACTION;
 	} else if (!strcasecmp("exit", actionText)) {
 		return RSTATUS_EXIT;
 	}
@@ -60,14 +58,15 @@ int readQuery(query_t *query) {
 		return RSTATUS_SKIP;
 	}
 
-	if (action == USER_ACTION) {
-		if (indata) {
-			query->userid = strtol(indata, NULL, 0);
-			printf("Set user to %ld\n", query->userid);
-		} else {
-			printf("No user id specified\n");
+	if (action == LOGIN_ACTION) {
+		char *userText;
+		userText = strtok(indata, " ");
+		indata = strtok(NULL, "");
+		if (!userText || !indata) {
+			printf("You need to specify both a userid and a password\n");
+			return RSTATUS_SKIP;
 		}
-		return RSTATUS_SKIP;
+		query->userid = strtol(userText, NULL, 0);
 	}
 
 	snprintf(data, 0x100, "FROM %ld;%s", query->userid, indata);
