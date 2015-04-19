@@ -1,0 +1,11 @@
+{
+	"name": "Smiley Server",
+	"score": 200,
+	"category": "Binary Exploitation",
+	"grader": "smiley-server/grader.py",
+	"description": "I've got a <a target=\"_blank\" href=\"http://tjctf.org/problem-static/smiley-server/d6de784c04c35640fffd1fb9b436a88e851ba2f6faf30a8e3a55fe633e684da1073bedb83d6c822fc51069eabf5ac83535b36037f3b48d3b742316c16eb6bb87-adminserver.zip\">administrative console</a> running at pwn.tjctf.org:8091",
+	"threshold": 0,
+	"weightmap": {},
+	"hint": "Look for the bad practice"
+}
+
