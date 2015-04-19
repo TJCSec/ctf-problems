@@ -1,3 +1,6 @@
+#!/bin/sh
+
 sha=`sha512sum $1 | cut -f1 -d' '`
-echo "Moving $1 to $sha-$1"
-mv $1 "$sha-$1"
+shad=${1%/*}/$sha-${1##*/}
+echo "Moving $1 to $shad"
+mv $1 $shad
