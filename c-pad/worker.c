@@ -2,36 +2,37 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "msgstructs.h"
 
 double ACCESS;
 
-int sparent[2], rparent[2];
+int sparent, rparent;
 
-const int cap[4] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
+const int cap[] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
 
 int recvQuery(query_t *query) {
 	char capbuf[100];
-	read(rparent[0], query, sizeof(query_t));
-	read(rparent[0], capbuf, 100);
+	read(rparent, query, sizeof(query_t));
+	read(rparent, capbuf, 100);
 
 	return 0;
 }
 
 int sendResponse(response_t *response) {
-	write(sparent[1], response, sizeof(response_t));
-	write(sparent[1], cap, sizeof(cap));
+	write(sparent, response, sizeof(response_t));
+	write(sparent, cap, sizeof(cap));
 
 	return 0;
 }
 
-int parseData(query_t *query, char *data) {
+char *parseData(query_t *query) {
 	char *prebuf;
 	prebuf = strtok(query->data, ";"); // Read the "FROM <id>;" part
 
-	data = strtok(NULL, "");
-
-	return 0;
+	return strtok(NULL, "");
 }
 
 int checkCredentials(query_t *query) {
@@ -49,12 +50,11 @@ int handleRead(query_t *query, response_t *response) {
 	if (!checkCredentials(query))
 		return needPermissions(response);
 
-	char fname[0x100];
-	parseData(query, fname);
+	char *fname = parseData(query);
 
 	if (access(fname, R_OK) == -1) {
 		response->status = FAILURE;
-		snprintf(response->data, 0x100, "%s", "Unable to read file");
+		snprintf(response->data, 0x100, "Unable to read %s because %d", fname, errno);
 
 		return 0;
 	}
@@ -73,8 +73,7 @@ int handleExec(query_t *query, response_t *response) {
 	if (!checkCredentials(query))
 		return needPermissions(response);
 
-	char command[0x100];
-	parseData(query, command);
+	char *command = parseData(query);
 
 	int status = system(command);
 
@@ -96,8 +95,7 @@ int handleLogin(query_t *query, response_t *response) {
 		return 0;
 	}
 
-	char input[0x100];
-	parseData(query, input);
+	char *input = parseData(query);
 	char password[0x100];
 	
 	FILE *file = fopen(fname, "r");
@@ -177,8 +175,8 @@ int setupAccess() {
 }
 
 int setupPipes() {
-	fread(rparent, sizeof(int), 2, stdin);
-	fread(sparent, sizeof(int), 2, stdin);
+	rparent = open("/tmp/servto.fifo", O_RDONLY);
+	sparent = open("/tmp/servfr.fifo", O_WRONLY);
 
 	return 0;
 }

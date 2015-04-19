@@ -1,20 +1,29 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 #include "msgstructs.h"
 
 char *lineptr = NULL;
 size_t linesize = 0;
 
-const int cap[1] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
+const int cap[] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
 
 FILE *worker;
-int sworker[2], rworker[2];
+int sworker, rworker;
 
 int readQuery(query_t *query) {
 	printf(">> ");
-	getline(&lineptr, &linesize, stdin);
+	ssize_t len = getline(&lineptr, &linesize, stdin);
+	if (len <= 1) {
+		printf("Exiting...\n");
+		exit(1);
+		return 1;
+	}
+	lineptr[len-1] = '\0';
 	char *actionText, *userText, *indata;
 	action_t action;
 	long userid;
@@ -60,27 +69,25 @@ int setupWorker() {
 	if (!worker) {
 		fprintf(stderr, "Failed to create worker");
 	}
-	if (!pipe(sworker) || !pipe(rworker)) {
-		fprintf(stderr, "Failed to create pipe");
-		exit(1);
-		return 1;
-	}
-	
-	fwrite(sworker, sizeof(int), 2, worker);
-	fwrite(rworker, sizeof(int), 2, worker);
+
+	mkfifo("/tmp/servto.fifo", 0666);
+	mkfifo("/tmp/servfr.fifo", 0666);
+
+	sworker = open("/tmp/servto.fifo", O_WRONLY);
+	rworker = open("/tmp/servfr.fifo", O_RDONLY);
 	return 0;
 }
 
 int sendQuery(query_t *query) {
-	write(sworker[1], query, sizeof(query_t));
-	write(sworker[1], cap, sizeof(cap));
+	write(sworker, query, sizeof(query_t));
+	write(sworker, cap, sizeof(cap));
 	return 0;
 }
 
 int recvResponse(response_t *response) {
 	char capbuf[100];
-	read(rworker[0], response, sizeof(response_t));
-	read(rworker[0], capbuf, 100);
+	read(rworker, response, sizeof(response_t));
+	read(rworker, capbuf, 100);
 
 	return 0;
 }
