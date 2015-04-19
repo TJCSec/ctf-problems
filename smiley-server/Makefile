@@ -1,14 +1,15 @@
-all: copysrc build
-
-build: compile
-	docker build -t smiley src/
-
-copysrc: compile
-	zip static/adminserver.zip src/worker.c src/adminserver.c src/msgstructs.h src/adminserver src/worker
-	../utils/cdnify static/adminserver.zip
+all: build
 
 run:
 	docker run -d -p 8091:1337 -t smiley
+
+build:
+	docker build -t smiley src/
+
+copysrc:
+	zip static/adminserver.zip src/worker.c src/adminserver.c src/msgstructs.h src/adminserver src/worker
+	../utils/cdnify static/adminserver.zip
+
 
 compile:
 	gcc src/adminserver.c src/msgstructs.h -m32 -funit-at-a-time -ftree-forwprop -ftree-ter -fipa-pure-const -fipa-profile -fmerge-constants -malign-double -ftree-bit-ccp -fdse -fauto-inc-dec -fif-conversion -ftree-sra -fbranch-count-reg -ftree-dse -ftree-sink -ftree-copyrename -ftree-phiprop -fshrink-wrap -ftree-copy-prop -ftree-fre -fsplit-wide-types -ftree-pta -ftree-dominator-opts -ftree-ccp -fcompare-elim -fif-conversion2 -ftree-slsr -fdefer-pop -fforward-propagate -fipa-reference -ftree-dce -o src/adminserver
