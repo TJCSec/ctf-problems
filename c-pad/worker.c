@@ -143,6 +143,18 @@ int handle(query_t *query, response_t *response) {
 			response->status = SUCCESS;
 			snprintf(response->data, 0x100, "%s", "You are a star! :)");
 			return 0;
+		case HELP_ACTION:
+			response->status = SUCCESS;
+			snprintf(response->data, 0x100, "%s", 
+				"Commands:\n"
+				"status\n"
+				"read <file>\n"
+				"smiley\n"
+				"exec <command>\n"
+				"login <password> # Login to the current user\n"
+				"user <userid> # Sets the current user"
+			);
+			return 0;
 		default:
 			response->status = FAILURE;
 			snprintf(response->data, 0x100, "%s", "Command not implemented");

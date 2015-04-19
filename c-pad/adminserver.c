@@ -31,7 +31,6 @@ int readQuery(query_t *query) {
 
 	action = INVALID_ACTION;
 	actionText = strtok(lineptr, " ");
-	userText = strtok(NULL, " ");
 	indata = strtok(NULL, "");
 
 	if (!strcasecmp("read", actionText)) {
@@ -44,22 +43,28 @@ int readQuery(query_t *query) {
 		action = STATUS_ACTION;
 	} else if (!strcasecmp("smiley", actionText)) {
 		action = SMILEY_ACTION;
+	} else if (!strcasecmp("help", actionText)) {
+		action = HELP_ACTION;
+	} else if (!strcasecmp("user", actionText)) {
+		action = USER_ACTION;
 	}
 
 	if (action == INVALID_ACTION) {
-		printf("The action you entered was not recognized\n");
+		printf("The action you entered was not recognized. Try help.\n");
 		return 1;
 	}
 
-	userid = strtol(userText, NULL, 10);
+	if (action == USER_ACTION) {
+		if (indata) 
+		query->userid = strtol(indata, NULL, 10);
+		printf("Set user\n");
+		return 1;
+	}
 
-	snprintf(data, 0x100, "FROM %ld;%s", userid, indata);
+	snprintf(data, 0x100, "FROM %ld;%s", query->userid, indata);
 
 	query->action = action;
-	query->userid = userid;
 	memcpy(query->data, data, 0x100);
-
-	printf("Parsed query...\n");
 
 	return 0;
 }
@@ -93,13 +98,13 @@ int recvResponse(response_t *response) {
 }
 
 int writeResponse(response_t *response) {
-	if (response == SUCCESS) {
-		printf("Your query succeeded\n");
+	if (response->status == SUCCESS) {
+		printf("Your query succeeded.\n");
 	} else {
 		printf("Your query failed\n");
 	}
 
-	printf("%s\n", response->data);
+	printf("Response:\n\n%s\n", response->data);
 
 	return 0;
 }
@@ -109,6 +114,7 @@ int run() {
 	response_t response;
 
 	query.credentials = 0.0;
+	query.userid = -1;
 
 	while (1) {
 		if (readQuery(&query)) {
