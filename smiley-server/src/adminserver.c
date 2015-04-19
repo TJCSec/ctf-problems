@@ -7,21 +7,25 @@
 
 #include "msgstructs.h"
 
+#define RSTATUS_SKIP 1
+#define RSTATUS_QUERY 0
+#define RSTATUS_EXIT 2
+
 char *lineptr = NULL;
 size_t linesize = 0;
 
 const int cap[] = { CAPVAL, CAPVAL, CAPVAL, CAPVAL };
 
 FILE *worker;
-int sworker, rworker;
+char wpipe[100], rpipe[100];
 
 int readQuery(query_t *query) {
 	printf(">> ");
 	ssize_t len = getline(&lineptr, &linesize, stdin);
-	if (len <= 1) {
-		printf("Exiting...\n");
-		exit(1);
-		return 1;
+	if (len < 1) {
+		return RSTATUS_EXIT;
+	} else if (len == 1) {
+		return RSTATUS_SKIP;
 	}
 	lineptr[len-1] = '\0';
 	char *actionText, *userText, *indata;
@@ -45,20 +49,24 @@ int readQuery(query_t *query) {
 		action = SMILEY_ACTION;
 	} else if (!strcasecmp("help", actionText)) {
 		action = HELP_ACTION;
-	} else if (!strcasecmp("user", actionText)) {
-		action = USER_ACTION;
+	} else if (!strcasecmp("exit", actionText)) {
+		return RSTATUS_EXIT;
 	}
 
 	if (action == INVALID_ACTION) {
 		printf("The action you entered was not recognized. Try help.\n");
-		return 1;
+		return RSTATUS_SKIP;
 	}
 
-	if (action == USER_ACTION) {
-		if (indata) 
-		query->userid = strtol(indata, NULL, 10);
-		printf("Set user\n");
-		return 1;
+	if (action == LOGIN_ACTION) {
+		char *userText;
+		userText = strtok(indata, " ");
+		indata = strtok(NULL, "");
+		if (!userText || !indata) {
+			printf("You need to specify both a userid and a password\n");
+			return RSTATUS_SKIP;
+		}
+		query->userid = strtol(userText, NULL, 0);
 	}
 
 	snprintf(data, 0x100, "FROM %ld;%s", query->userid, indata);
@@ -66,33 +74,23 @@ int readQuery(query_t *query) {
 	query->action = action;
 	memcpy(query->data, data, 0x100);
 
-	return 0;
-}
-
-int setupWorker() {
-	worker = popen("./worker", "w");
-	if (!worker) {
-		fprintf(stderr, "Failed to create worker");
-	}
-
-	mkfifo("/tmp/servto.fifo", 0666);
-	mkfifo("/tmp/servfr.fifo", 0666);
-
-	sworker = open("/tmp/servto.fifo", O_WRONLY);
-	rworker = open("/tmp/servfr.fifo", O_RDONLY);
-	return 0;
+	return RSTATUS_QUERY;
 }
 
 int sendQuery(query_t *query) {
-	write(sworker, query, sizeof(query_t));
-	write(sworker, cap, sizeof(cap));
+	FILE *sworker = fopen(wpipe, "w");
+	fwrite(query, sizeof(query_t), 1, sworker);
+	fwrite(cap, 1, sizeof(cap), sworker);
+	fclose(sworker);
 	return 0;
 }
 
 int recvResponse(response_t *response) {
+	FILE *rworker = fopen(rpipe, "r");
 	char capbuf[100];
-	read(rworker, response, sizeof(response_t));
-	read(rworker, capbuf, 100);
+	fread(response, sizeof(response_t), 1, rworker);
+	fread(capbuf, 1, 100, rworker);
+	fclose(rworker);
 
 	return 0;
 }
@@ -112,12 +110,19 @@ int writeResponse(response_t *response) {
 int run() {
 	query_t query;
 	response_t response;
+	int rstatus;
 
 	query.credentials = 0.0;
 	query.userid = -1;
 
 	while (1) {
-		if (readQuery(&query)) {
+		rstatus = readQuery(&query);
+		if (rstatus == RSTATUS_EXIT) {
+			printf("Exiting...");
+			query.action = EXIT_ACTION;
+			sendQuery(&query);
+			return 0;
+		} else if (rstatus == RSTATUS_SKIP) {
 			continue;
 		}
 
@@ -134,10 +139,39 @@ int run() {
 	return 0;
 }
 
+int setupWorker() {
+	worker = popen("./worker", "w");
+	setbuf(worker, NULL);
+	if (!worker) {
+		printf("Failed to create worker\n");
+		exit(1);
+		return 1;
+	}
+
+	srand(time(NULL) + clock());
+
+	snprintf(wpipe, 100, "/tmp/servto.%d.fifo", rand());
+	snprintf(rpipe, 100, "/tmp/servfr.%d.fifo", rand());
+
+	mkfifo(wpipe, 0666);
+	mkfifo(rpipe, 0666);
+
+	fprintf(worker, "%s %s\n", wpipe, rpipe);
+	fflush(worker);
+
+	return 0;
+}
+
 int main(int argc, char **argv) {
 	setbuf(stdout, NULL);
 	
 	setupWorker();
 
-	return run();
+	int status = run();
+
+	unlink(wpipe);
+	unlink(rpipe);
+	pclose(worker);
+
+	return status;
 }
