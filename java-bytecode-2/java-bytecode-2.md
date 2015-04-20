@@ -1,1 +1,1 @@
-Unlock [java bytecode](JavaBytecode2.class.txt).
+Unlock [java bytecode](http://cdn.tjctf.org/java-bytecode-2/f9ccd80218906566c5e632f0399b0adbb2b36861d2f395d754f5426ef7d77da0cce70dfaac88c2210d8d58394f6fa5f8b45b35e01f0600967bc9db10c96588d6-JavaBytecode2.class.txt).
