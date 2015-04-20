@@ -1,0 +1,10 @@
+{
+  "name": "Backpack",
+  "score": "<<this will be finalized after testing>>",
+  "category": "Crypto" ,
+  "grader": "backpack/grader.py",
+  "description": "I had an awesome flag here, but I accidentally encrypted it... :( I know it was all lowercase letters though. Can you help me recover it?<br>Source: <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/backpack/4cd90ed6e1b1f718fde13bfc17e2059bccf3d33988fadfb80a1ee90df8f6184b5f9a126b929a267e1366297aa2aed336363599530cf31702de6db0c92ed110b2-backpack.py\">backpack.py</a><br>Output (Public key and ciphertext): <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/backpack/e022c9b6e885c951d99ee139cdc54bdd28193793ed2b6c6f2106fc9e1a2bcfc13173e08f9005f1b5844a7005110ea39eaa5ad1af4ea4ff404633b6d5d3aabc10-output\">output</a>",
+  "threshold": 0,
+  "weightmap": {},
+  "hint": ""
+}
