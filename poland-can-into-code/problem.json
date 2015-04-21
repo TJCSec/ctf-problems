@@ -1,0 +1,10 @@
+{
+  "name": "Poland Can Into Code",
+  "score": 140,
+  "category": "miscellaneous" ,
+  "grader": "poland-can-into-code/grader.py",
+  "description": "Polan of findings sneaky picture. Of thinkings picture may take password, but Polan cannot into knowings how works",
+  "threshold": 0,
+  "weightmap": {},
+  "hint": "Python has some x-tremely strange flags"
+}
