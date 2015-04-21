@@ -1,6 +1,5 @@
 {
 	"name": "Smiley Server",
-    "author": "Strikeskids",
 	"score": 200,
 	"category": "Binary Exploitation",
 	"grader": "smiley-server/grader.py",

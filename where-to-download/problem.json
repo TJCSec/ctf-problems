@@ -1,6 +1,5 @@
 {
 	"name": "Where to Download",
-    "author": "Strikeskids",
 	"score": 50,
 	"category": "Miscellaneous",
 	"grader": "where-to-download/grader.py",

@@ -1,6 +1,5 @@
 {
     "name": "Java Bytecode 2",
-    "author": "Strikeskids",
     "score": 60,
     "category": "Binary Exploitation",
     "grader": "java-bytecode-2/grader.py",

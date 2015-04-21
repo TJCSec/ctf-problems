@@ -1,6 +1,5 @@
 {
 	"name": "Return Oriented Programming 2",
-    "author": "Strikeskids",
 	"score": 70,
 	"category": "Binary Exploitation",
 	"grader": "rop2/grader.py",
