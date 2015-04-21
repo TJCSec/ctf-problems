@@ -18,10 +18,7 @@ int rotinput(char* t, int size) {
         }
 
         if (c == '\n') {
-            if (c == '\n') {
-                t[i] = '\n';
-                i++;
-            }
+            t[i++] = '\n';
             t[i] = 0;
             break;
         }
@@ -39,7 +36,7 @@ int rotinput(char* t, int size) {
 
 int main() {
     setbuf(stdout, NULL);
-    
+
     char buf[256] = {0};
     printf("ROT13-ATOR\n");
     printf("Input strings. Send an empty newline to end.\n");
