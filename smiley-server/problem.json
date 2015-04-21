@@ -1,11 +1,11 @@
 {
 	"name": "Smiley Server",
+    "author": "Strikeskids",
 	"score": 200,
 	"category": "Binary Exploitation",
 	"grader": "smiley-server/grader.py",
-	"description": "I've got a <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/smiley-server/0d9148d7e292e0cecb1a0e288c7a87771f32ee3b4a800abdd27f2294bf84575ce2db8d1d64d9c67bfdd71c18b067ced2640cc83e16767476df36c2ad1e6d8fb9-adminserver.zip\">administrative console</a> running at <code>p.tjctf.org:8091</code>",
+	"description": "<p>I've got a <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/smiley-server/0d9148d7e292e0cecb1a0e288c7a87771f32ee3b4a800abdd27f2294bf84575ce2db8d1d64d9c67bfdd71c18b067ced2640cc83e16767476df36c2ad1e6d8fb9-adminserver.zip\">administrative console</a> running at <code>p.tjctf.org:8091</code></p>",
 	"threshold": 0,
 	"weightmap": {},
 	"hint": "Look for the bad practice"
 }
-
