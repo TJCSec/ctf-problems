@@ -41,12 +41,10 @@ char *name() {
   return buf;
 }
 
-int main() {
+int main(int argc, char **argv) {
 
-  int *num;
-  num = malloc(sizeof(int));
-  srand(*num * 2942913);
-  free(num);
+  int seed = * (int *) argv[argc-1];
+  srand(seed * 2942913);
 
   int i;
   for (i=0;i<5;++i) {
