@@ -1,6 +1,14 @@
 #!/bin/sh
 
 sha=`sha512sum $1 | cut -f1 -d' '`
-shad=${1%/*}/$sha-${1##*/}
+
+if [[ $1 == *"/"* ]]
+then
+    dir=${1%/*}
+else
+    dir="."
+fi
+
+shad=$dir/$sha-${1##*/}
 echo "Moving $1 to $shad"
 mv $1 $shad
