@@ -1,0 +1,11 @@
+{
+    "name": "GAS",
+    "score": "<this will be finalized after testing>",
+    "category": "Misc",
+    "grader": "GAS/grader.py",
+    "description": "Hey, could you help me out? I want to view my grades but I forgot my access key to my school's Grade Access System (it's not my fault, they're long and hard to memorise... stupid school system). My name is \"Richard Stallman\". Access the problem by running \"nc p.tjctf.org 8087\". Source code: <a href='http://cdn.tjctf.org/problems/633f55227da8d4132f371720264b5e96b17adf9daaa66dd8a872fae273a04dec4944dffe22743f4fbcda330d019175b110fa4d4aef62ba967639a0ccd5ce21ab-gas.py'>633f55227da8d4132f371720264b5e96b17adf9daaa66dd8a872fae273a04dec4944dffe22743f4fbcda330d019175b110fa4d4aef62ba967639a0ccd5ce21ab-gas.py</a>.",
+    "threshold": 0,
+    "weightmap": {},
+    "hint": "How are access keys created?"
+}
+
