@@ -1,0 +1,10 @@
+{
+    "name": "I See Python",
+    "score": "",
+    "category": "Reversing",
+    "grader": "i-see-python/grader.py",
+    "description": "I lost my flag decryptor, but I found this compiled version.",
+    "threshold": 0,
+    "weightmap": {},
+    "hint": "Google is your friend"
+}
