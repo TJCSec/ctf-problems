@@ -1,7 +1,7 @@
 {
   "name": "Web Image",
   "score": 50,
-  "category": "web-exploitaion" ,
+  "category": "web-exploitation" ,
   "grader": "webimage/grader.py",
   "description": "Check out this awesome website that allows you to look at pictures. Which one is your favorite?",
   "threshold": 0,
