@@ -1,0 +1,10 @@
+{
+    "name": "risk",
+    "score": "a lot",
+    "category": "Reversing",
+    "grade": "risk/grader.py",
+    "description": "I got a little carried away with my flag printing program. Can you help me find the correct string?",
+    "threshold": "0",
+    "weightmap": {},
+    "hint": "Linked lists have something to do with it."
+}
