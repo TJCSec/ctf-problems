@@ -1,0 +1,10 @@
+{
+    "name": "Buzzword Factory",
+    "score": "",
+    "category": "Misc",
+    "grader": "BuzzwordFactory/grader.py",
+    "description": "The company I'm doing an internship with asked me to pentest their buzzword factory, but I'm not good at security. Can you do it for me? I'll pay you in flags.",
+    "threshold": 0,
+    "weightmap": {},
+    "hint": "Look at <strong>all</strong> of the classes"
+}
