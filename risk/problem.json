@@ -3,7 +3,7 @@
     "score": "a lot",
     "category": "Reversing",
     "grade": "risk/grader.py",
-    "description": "I got a little carried away with my flag printing program. Can you help me find the correct string?",
+    "description": "I got a little carried away with <a href=\"http://cdn.tjctf.org/problems/e6fa1893f578cbc995aef69ed94a43eca17a04275a117fb2bd2d668dd552aa5a11e40c1231a451d6061ebcbdd60be00bca4539e550d03971bd2f5a30dbbd6450-risk\">my flag printing program</a>. Can you help me find the correct string?",
     "threshold": "0",
     "weightmap": {},
     "hint": "Linked lists have something to do with it."
