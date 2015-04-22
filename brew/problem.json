@@ -3,7 +3,7 @@
   "score": "<<this will be finalized after testing>>",
   "category": "Web",
   "grader": "brew/grader.py",
-  "description": "I'm feeling a bit parched today. Can you <a target=\"_blank\" href=\"\">brew</a> some tea for me?",
+  "description": "I'm feeling a bit parched today. Can you <a target=\"_blank\" href=\"http://brew.p.tjctf.org/\">brew</a> some tea for me? <a href=\"615a29646eaffdf18c96b5a243b40096d9cb5c4f311d6e028f6f0f291cbc95a8fb1314952837929b46fe4d88863ce1c0b2a9fb74248a72c49d23daa757392527-app.py\">Source code</a>",
   "threshold": 0,
   "weightmap": {},
   "hint": "Check the headers!"

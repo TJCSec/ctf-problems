@@ -3,7 +3,7 @@
   "score": "<<this will be finalized after testing>>",
   "category": "Binary Exploitation",
   "grader": "rot13/grader.py",
-  "description": "awesoma powa!<br>ssh blah@blah<br>Source: <a href=\"http://cdn.tjctf.org/problems/644e9834bed955340c335ce118d3787b987f5613639c400127c0834a3740d5940900a2a62b85569c1a02658edda460c543e4c8f553a9ef69566615edc4d73293-rot13.c\">rot13.c</a>",
+  "description": "awesoma powa!<br>Connect to the shell server using your credentials, then cd into \"/problems/rot13\".<br>Source: <a href=\"http://cdn.tjctf.org/problems/644e9834bed955340c335ce118d3787b987f5613639c400127c0834a3740d5940900a2a62b85569c1a02658edda460c543e4c8f553a9ef69566615edc4d73293-rot13.c\">rot13.c</a>",
   "threshold": 0,
   "weightmap": {},
   "hint": "How to overflow?"
