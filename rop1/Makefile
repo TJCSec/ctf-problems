@@ -6,7 +6,7 @@ progname := rop1
 all: build
 
 run:
-	docker run -d -p 8092:1337 -t $(dockname)
+	docker run -d -p 8094:1337 -t $(dockname)
 
 nodocker:
 	./localwrapper
