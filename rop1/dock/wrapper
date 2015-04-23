@@ -1,6 +1,5 @@
 #!/bin/sh
 
-pushd /home/app
-./prog
-popd
+cd /home/app
+exec /home/app/prog
 
