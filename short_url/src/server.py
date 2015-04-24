@@ -1,11 +1,12 @@
 from flask import Flask
-from flask import abort, request, redirect, render_template, url_for
+from flask import abort, request, redirect, render_template, url_for, session
 import re
-import redis
 
 
 app = Flask(__name__)
-r = redis.Redis()
+app.secret_key = 'SEO*DHoinsbf9g*^FGUSOCH973b9wsef'
+
+secret_url = "http://pastebin.com/CX8CW6aY"  # redact
 
 
 def url_valid(url):
@@ -40,11 +41,11 @@ def base_conv(v1, a1, a2):
     return v2
 
 
-def shorten_url(url):
+def shorten_url(s, url):
     a1 = "0123456789"
     a2 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-    seed = int(base_conv(r.get("last_url"), a2, a1))
+    seed = int(base_conv(s.get("last_url","fabcab"), a2, a1))
 
     a = 9533525225  # redact
     c = 42933  # redact
@@ -53,19 +54,23 @@ def shorten_url(url):
     v1 = str((a * seed + c) % m)
     v2 = base_conv(v1, a1, a2)
 
-    r.set(v2, url)
-    r.set("last_url", v2)
-    r.incr("num_shortened")
+    s[v2] = url
+    s["last_url"] = v2
+    s["num_shortened"] = s.get("num_shortened", 0) + 1
 
     return v2
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    hits = r.incr("hit_count")
+    check_session(session)
+
+    session["hit_count"] += 1
+    hits = session["hit_count"]
+
     context = {
         "hits": hits,
-        "shortened": len(r.keys()) - 3,
+        "shortened": len(session.keys()) - 3,
     }
 
     if request.method == "GET":
@@ -73,7 +78,7 @@ def index():
     else:
         if url_valid(request.form.get("url", "")):
             url = request.form["url"]
-            url_hash = shorten_url(url)
+            url_hash = shorten_url(session, url)
             context["shortened"] += 1
             abs_url = url_for("follow_shortened_url",
                               url_hash=url_hash,
@@ -87,23 +92,29 @@ def index():
 
 @app.route("/<url_hash>", methods=["GET"])
 def follow_shortened_url(url_hash):
+    check_session(session)
+
     if not re.match("^[a-zA-Z0-9]+$", url_hash):
         abort(404)
-    url = r.get(url_hash)
+    url = session.get(url_hash)
     if url:
         return redirect(url)
     else:
         abort(404)
 
+def check_session(s):
+    if "hit_count" not in s:
+        s["hit_count"] = 0
+        shorten_url(s, secret_url)
+    
+    if "num_shortened" not in s:
+        s["num_shortened"] = 0
+
+    if "last_url" not in s:
+        s["last_url"] = "fabcab"
+
 
 if __name__ == "__main__":
-    secret_url = "http://pastebin.com/SMtP9z7B"  # redact
-
-    r.flushall()
-    r.set("hit_count", 0)
-    r.set("num_shortened", 0)
-    r.set("last_url", "fabcab")
-    shorten_url(secret_url)
 
     app.debug = True
     app.run()

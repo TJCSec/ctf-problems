@@ -1,0 +1,119 @@
+from flask import Flask
+from flask import abort, request, redirect, render_template, url_for, session
+import re
+
+
+app = Flask(__name__)
+app.secret_key = 'xxxxxxxxxxxxxxxxxxxxxxxxx'
+
+secret_url = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # redact
+
+
+def url_valid(url):
+    # Ripped from Django
+    regex = re.compile(
+            r"^(?:[a-z0-9\.\-]*)://"  # scheme is validated separately
+            r"(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}(?<!-)\.?)|"  # domain...
+            r"localhost|"  # localhost...
+            r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|"  # ...or ipv4
+            r"\[?[A-F0-9]*:[A-F0-9:]+\]?)"  # ...or ipv6
+            r"(?::\d+)?"  # optional port
+            r"(?:/?|[/?]\S+)$", re.IGNORECASE)
+    schemes = ["http", "https"]
+    scheme = url.split("://")[0].lower()
+    return (scheme in schemes) and bool(regex.search(url))
+
+
+def base_conv(v1, a1, a2):
+    n1 = {c: i for i, c in enumerate(a1)}
+    b1 = len(a1)
+    b2 = len(a2)
+
+    d1 = 0
+    for i, c in enumerate(v1):
+        d1 += n1[c] * pow(b1, len(v1) - i - 1)
+
+    v2 = ""
+    while d1:
+        v2 = a2[d1 % b2] + v2
+        d1 //= b2
+
+    return v2
+
+
+def shorten_url(s, url):
+    a1 = "0123456789"
+    a2 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+    seed = int(base_conv(s.get("last_url","fabcab"), a2, a1))
+
+    a = xxxxxxxxx  # redact
+    c = xxxxxxxxx  # redact
+    m = xxxxxxxxx  # redact
+
+    v1 = str((a * seed + c) % m)
+    v2 = base_conv(v1, a1, a2)
+
+    s[v2] = url
+    s["last_url"] = v2
+    s["num_shortened"] = s.get("num_shortened", 0) + 1
+
+    return v2
+
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    check_session(session)
+
+    session["hit_count"] += 1
+    hits = session["hit_count"]
+
+    context = {
+        "hits": hits,
+        "shortened": len(session.keys()) - 3,
+    }
+
+    if request.method == "GET":
+        return render_template("index.html", **context)
+    else:
+        if url_valid(request.form.get("url", "")):
+            url = request.form["url"]
+            url_hash = shorten_url(session, url)
+            context["shortened"] += 1
+            abs_url = url_for("follow_shortened_url",
+                              url_hash=url_hash,
+                              _external=True)
+            context["shortened_url"] = abs_url
+        else:
+            context["error"] = True
+            context["target_url"] = request.form.get("url", "")
+        return render_template("index.html", **context)
+
+
+@app.route("/<url_hash>", methods=["GET"])
+def follow_shortened_url(url_hash):
+    check_session(session)
+
+    if not re.match("^[a-zA-Z0-9]+$", url_hash):
+        abort(404)
+    url = session.get(url_hash)
+    if url:
+        return redirect(url)
+    else:
+        abort(404)
+
+def check_session(s):
+    if "hit_count" not in s:
+        s["hit_count"] = 0
+        shorten_url(s, secret_url)
+    
+    if "num_shortened" not in s:
+        s["num_shortened"] = 0
+
+    if "last_url" not in s:
+        s["last_url"] = "fabcab"
+
+
+if __name__ == "__main__":
+
+    app.run()

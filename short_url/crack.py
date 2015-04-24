@@ -1,9 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 from fractions import gcd
+import uuid
 
 a10 = "0123456789"
 a62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+s = requests.session()
 
 
 def base_conv(v1, a1, a2):
@@ -45,10 +48,10 @@ id_o = 0
 
 for i in range(k):
     data = {
-        "url": "http://www.google.com/"
+        "url": "http://www.google.com/%s" % uuid.uuid4()
     }
 
-    r = requests.post("http://127.0.0.1:5000", data=data)
+    r = s.post("http://127.0.0.1:8095", data=data)
     html = BeautifulSoup(r.text)
     url_id = int(html.find_all("li")[1].text.split()[2]) - 1
     if i == 0:
