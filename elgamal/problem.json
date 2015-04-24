@@ -1,0 +1,10 @@
+{
+  "name": "ElGamal",
+  "score": "<<this will be finalized after testing>>",
+  "category": "Crypto",
+  "grader": "elgamal/grader.py",
+  "description": "We intercepted <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/d65c36c87b0ac038c506245a02f2a89a968d597c163822d22ffa8c22f42e4ce1e50287ce5b3c418f322a1d1e1e0e129dc3a31a1b50b35a949e1505a7e15bdc43-source\">this message</a>, and we know that it's been encrypted with ElGamal. Can you help us recover the message?",
+  "threshold": 0,
+  "weightmap": {},
+  "hint": "Read up on ElGamal."
+}
