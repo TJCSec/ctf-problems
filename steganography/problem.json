@@ -1,0 +1,10 @@
+{
+  "name": "steganography",
+  "score": "20",
+  "category": "misc",
+  "grader": "steganography/grader.py",
+  "description": "MakeImage can generate an image with something hidden in it.",
+  "threshold": 0,
+  "weightmap": {},
+  "hint": "The red and green bits seem off."
+}
