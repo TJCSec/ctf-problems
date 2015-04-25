@@ -3,7 +3,7 @@
   "score": 20,
   "category": "Miscellaneous",
   "grader": "steganography/grader.py",
-  "description": "There's something hidden in the image.",
+  "description": "There's something hidden in <a href=\"http://cdn.tjctf.org/problems/a01eec38e993cc9cac8972a0de6fc2312217ee74-image.png\">the image</a>. You might want this too: <a href=\"http://cdn.tjctf.org/problems/82319c5553eb083a77f411b3f10799770a1dcdde-PrintPixels.jar\">82319c5553eb083a77f411b3f10799770a1dcdde-PrintPixels.jar</a>.",
   "threshold": 0,
   "weightmap": {},
   "hint": "The red and green bits seem off."
