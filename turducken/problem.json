@@ -1,7 +1,7 @@
 {
   "name": "Turducken",
   "score": 120,
-  "category": "Miscellaneous",
+  "category": "Forensics",
   "grader": "turducken/grader.py",
   "description": "Listen to my newest song: <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/c0b240771f5d1740e04c00523ced2f4ca125f3258bc9341565302d60218fc4325c98a1803b9023b79eb7752621b21c192803adae4a138ace4d74c91ad2d30fe8-turducken.wav\">Download</a>",
   "threshold": 0,

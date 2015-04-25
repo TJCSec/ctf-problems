@@ -1,7 +1,7 @@
 {
 	"name": "Where to Download",
 	"score": 75,
-	"category": "Web Exploitation",
+	"category": "Forensics",
 	"grader": "where-to-download/grader.py",
 	"description": "Can you find the full (dot-separated) path to the variable where <a target=\"_blank\" href=\"https://www.youtube.com\">YouTube</a> stores the download urls for its videos?",
 	"threshold": 0,
