@@ -3,7 +3,7 @@
     "score": 35,
     "category": "Binary Exploitation",
     "grader": "java-bytecode-1/grader.py",
-    "description": "<p>Figure out the password to unlock <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/java-bytecode-1/ce5867eb37a2b7c8460038088e9827f9a3ed142f6c9387e35732360ade029cd4f9a4ef5ddba1344b296a0b50834041b1f84eb75ac8ab32dce5fec1b6fbb2e467-java-bytecode-1.jar\">this executable jar file</a></p>",
+    "description": "<p>Figure out the password to unlock <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/ce5867eb37a2b7c8460038088e9827f9a3ed142f6c9387e35732360ade029cd4f9a4ef5ddba1344b296a0b50834041b1f84eb75ac8ab32dce5fec1b6fbb2e467-java-bytecode-1.jar\">this executable jar file</a></p>",
     "threshold": 0,
     "weightmap": {},
     "hint": "This might be something that even a decompiler could understand."
