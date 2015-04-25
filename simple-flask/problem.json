@@ -1,7 +1,7 @@
 {
     "name": "Simple Flask",
-    "score": "<this will be finalized after testing",
-    "category": "Web",
+    "score": 30,
+    "category": "Web Exploitation",
     "grader": "simple-flask/grader.py",
     "description": "I found this website at <a href='http://simple-flask.p.tjctf.org/'>simple-flask.p.tjctf.org</a>. Looks like they're using some Python web framework called \"Flask\". Can you find the flag? Here's the source code: <a href='http://cdn.tjctf.org/problems/2b8270f97b281869d84a05246f16ca5c6e322d4554bc113210e63cef509dbef6d21ab4d766a35d4b319ac759214bddb8b1cee1b25f27c54da4af907bac4deef1-simple-flask.py'>2b8270f97b281869d84a05246f16ca5c6e322d4554bc113210e63cef509dbef6d21ab4d766a35d4b319ac759214bddb8b1cee1b25f27c54da4af907bac4deef1-simple-flask.py</a>.",
     "threshold": 0,

@@ -1,7 +1,7 @@
 {
     "name": "501",
-    "score": "<this will be finalized after testing>",
-    "category": "Web",
+    "score": 80,
+    "category": "Web Exploitation",
     "grader": "501/grader.py",
     "description": "Because we love security, we created a brand new system using 501-factor authentication. The problem is running at <a href='http://501.p.tjctf.org/'>501.p.tjctf.org</a>. The QR codes containing the TOTP information for each factor, in order, is at <a href='http://cdn.tjctf.org/problems/126b49032dfb53157fe19e44b560b139806961fd6e8bc3c44026c86f8f76bfe15ce4a71b086a1cc40cb58a6eb8e179d1cd935bf799ac6d87324404ef728833b1-images.tar.gz'>126b49032dfb53157fe19e44b560b139806961fd6e8bc3c44026c86f8f76bfe15ce4a71b086a1cc40cb58a6eb8e179d1cd935bf799ac6d87324404ef728833b1-images.tar.gz</a>. The source code is at <a href='http://cdn.tjctf.org/problems/6d2080c056eed465bc99d61606a6d62784db5535636c5e07b5a837cade8dd884a819e93cd95373a4d6ecf68c48b3ac0adfd1b4984365e05b3de4b43501386d09-app.py'>6d2080c056eed465bc99d61606a6d62784db5535636c5e07b5a837cade8dd884a819e93cd95373a4d6ecf68c48b3ac0adfd1b4984365e05b3de4b43501386d09-app.py</a>.",
     "threshold": 0,

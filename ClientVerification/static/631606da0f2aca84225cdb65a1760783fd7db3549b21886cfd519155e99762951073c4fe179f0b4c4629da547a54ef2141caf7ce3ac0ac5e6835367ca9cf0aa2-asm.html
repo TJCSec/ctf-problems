@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>asm.html</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+var Module = {
+	print: function(text) {
+		alert(text);
+	},
+	stdinFunction: function() {
+		return $("#stdin").val()
+	}
+}
+
+$(document).ready(function() {
+	$("#start").click(function() {
+		Module.run()
+		$("#start").prop("disabled", true);
+	})
+})
+
+		</script>
+		<script src="http://cdn.tjctf.org/problems/6edc3e5cc8fd4d35ae7ad4a2268f7eb8db33575712b86ba1c2cb3766a7332dcd145699290f57cae413769ae3a5ef107f8b991534d2ae1fdc34c43320f1aca2d8-asm.js"></script>
+		<style>
+#container {
+	padding: 30px;
+	border: 1px solid black;
+	margin: auto auto;
+	max-width: 300px;
+}
+#header {
+	font-weight: bold;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+	height: 100px;
+}
+		</style>	
+	</head>
+	<body>
+		<div id="header">
+			Guess the Password
+		</div>
+		<div id="container">
+			<input type="text" id="stdin" placeholder="Password"></input><input id="start" type="button" value="Check"></input>
+		</div>
+	</body>
+</html>

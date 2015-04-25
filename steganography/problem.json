@@ -1,7 +1,7 @@
 {
-  "name": "steganography",
-  "score": "20",
-  "category": "misc",
+  "name": "Steganography",
+  "score": 20,
+  "category": "Miscellaneous",
   "grader": "steganography/grader.py",
   "description": "There's something hidden in the image.",
   "threshold": 0,

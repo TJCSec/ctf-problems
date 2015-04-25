@@ -1,7 +1,7 @@
 {
     "name": "Division Error",
-    "score": "<this will be finalized after testing>",
-    "category": "Web",
+    "score": 50,
+    "category": "Web Exploitation",
     "grader": "division-error/grader.py",
     "description": "Looks like this little app divides two numbers and returns the result. Can you get the flag? Problem at <a href='http://division-error.p.tjctf.org/'>division-error.p.tjctf.org</a>. Source at <a href='http://cdn.tjctf.org/problems/9949bec6e4dabc17a90e090245e54a1bc07a3fce07ce61449843e4d12a9e692492793c37b2150a438dd123e3adecbf469639ea435ad6d43259dde3ad5d6bbcdf-division-error.py'>9949bec6e4dabc17a90e090245e54a1bc07a3fce07ce61449843e4d12a9e692492793c37b2150a438dd123e3adecbf469639ea435ad6d43259dde3ad5d6bbcdf-division-error.py</a>.",
     "threshold": 0,

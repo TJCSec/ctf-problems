@@ -1,7 +1,7 @@
 {
     "name": "Buzzword Factory",
-    "score": "",
-    "category": "Misc",
+    "score": 20,
+    "category": "Miscellaneous",
     "grader": "BuzzwordFactory/grader.py",
     "description": "The company I'm doing an internship with asked me to pentest <a href=\"http://cdn.tjctf.org/problems/ff2fa1503d30a91de467ff7795df93b961fbfaaf9b8a61d54992ae814c0b3de415379135023b8e8c130e84b981ebbd6f463b07ca0f9c9f3dae507c6482582708-BuzzwordFactory.tar.gz\">their buzzword factory</a>, but I'm not good at security. Can you do it for me? I'll pay you in flags.",
     "threshold": 0,

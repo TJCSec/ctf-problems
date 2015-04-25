@@ -1,7 +1,7 @@
 {
   "name": "Curvature",
-  "score": "<<this will be finalized after testing>>",
-  "category": "Crypto",
+  "score": 200,
+  "category": "Cryptography",
   "grader": "curvature/grader.py",
   "description": "Do you like elliptic curves?<br>nc blah blah<br>Source: <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/c66a0fa97b402e7d81f6d6b9c439a38446529a080a93bef18f267cd08c9cccf0f61b26c370fb93c4fe2d6f1a8e80d87684302517a340be2d5a6c804ea16f02c8-server.py\">server.py</a>",
   "threshold": 0,

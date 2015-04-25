@@ -1,7 +1,7 @@
 {
   "name": "Web Image",
   "score": 50,
-  "category": "web-exploitation" ,
+  "category": "Web Exploitation" ,
   "grader": "webimage/grader.py",
   "description": "Check out <a href=\"http://webimage.p.tjctf.org\">this</a> awesome website that allows you to look at pictures. Which one is your favorite?",
   "threshold": 0,
