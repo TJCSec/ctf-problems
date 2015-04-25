@@ -1,5 +1,5 @@
 def grade(arg, key):
-	if ">*%U?^vj" in key:
+	if "qQmNin3!" in key:
 		return True, "Correct"
 	else:
 		return False, "Incorrect"
