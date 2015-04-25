@@ -1,6 +1,6 @@
 {
   "name": "Client Side Verification",
-  "score": 100,
+  "score": 140,
   "category": "Reverse Engineering" ,
   "grader": "ClientVerification/grader.py",
   "description": "I found a <a href='http://client-verification.p.tjctf.org/'>website</a> that checks passwords on the client side. It is written in javascript so it should be easy to find the correct password.<br>Get the source <a href=\"http://cdn.tjctf.org/problems/6edc3e5cc8fd4d35ae7ad4a2268f7eb8db33575712b86ba1c2cb3766a7332dcd145699290f57cae413769ae3a5ef107f8b991534d2ae1fdc34c43320f1aca2d8-asm.js\">here</a>.",
