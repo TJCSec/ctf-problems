@@ -5,9 +5,9 @@ import re
 
 
 app = Flask(__name__)
-app.secret_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+app.secret_key = 'xxxxxxxxxxxxxxxxxxxxxxxx'
 
-secret_url = "xxxxxxxxxxxxxxxxxxxxxxxxxxx"  # redact
+secret_url = "xxxxxxxxxxxxxxxxxx"  # redact
 
 BS = 16
 pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS) 
@@ -60,16 +60,16 @@ def shorten_url(s, url):
 
     seed = int(base_conv(dec(s.get("last_url",enc("fabcab"))), a2, a1))
 
-    a = xxxxxx  # redact
-    c = xxxxxx  # redact
-    m = xxxxxx  # redact
+    a = xxxxxxx  # redact
+    c = xxxx  # redact
+    m = xxxxxxxx  # redact
 
     v1 = str((a * seed + c) % m)
     v2 = base_conv(v1, a1, a2)
 
     s[v2] = url
     s["last_url"] = enc(v2)
-    s["num_shortened"] = s.get("num_shortened", 0) + 1
+    s["num_shortened"] += 1
 
     return v2
 
@@ -83,7 +83,7 @@ def index():
 
     context = {
         "hits": hits,
-        "shortened": len(session.keys()) - 3,
+        "shortened": len(session.keys()) - 4,
     }
 
     if request.method == "GET":
@@ -116,17 +116,16 @@ def follow_shortened_url(url_hash):
         abort(404)
 
 def check_session(s):
+    if "updated" not in s:
+        s.clear()
+        
     if "hit_count" not in s:
         s["hit_count"] = 0
+        s["num_shortened"] = 0
+        s["last_url"] = enc("fabcab")
+        s["updated"] = True
         shorten_url(s, secret_url)
     
-    if "num_shortened" not in s:
-        s["num_shortened"] = 0
-
-    if "last_url" not in s:
-        s["last_url"] = enc("fabcab")
-
-
 if __name__ == "__main__":
 
     app.debug = True
