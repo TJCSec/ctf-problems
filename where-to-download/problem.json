@@ -3,7 +3,7 @@
 	"score": 75,
 	"category": "Web Exploitation",
 	"grader": "where-to-download/grader.py",
-	"description": "Can you find the full (dot-separated) path to the variable where <a href=\"https://www.youtube.com\">YouTube</a> stores the download urls for its videos?",
+	"description": "Can you find the full (dot-separated) path to the variable where <a target=\"_blank\" href=\"https://www.youtube.com\">YouTube</a> stores the download urls for its videos?",
 	"threshold": 0,
 	"weightmap": {},
 	"hint": "If I type the answer into the javascript console, it should give me a nice string of urls plus some extra metadata"
