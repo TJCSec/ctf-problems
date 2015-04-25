@@ -3,7 +3,7 @@
     "score": 200,
     "category": "Web Exploitation",
     "grader": "short_url/grader.py",
-    "description": "Site: <a target=\"_blank\" href=\"http://short-url.p.tjctf.org/\">short-url.p.tjctf.org</a>. <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/5b1c0823800059532f64610d00ac9f01bc574c53421297762e62f362ec1771f41dcb45877e2a88c9f7574dbc691de2ad1ef22cad7280729ccb4d95683f3970d4-server.py\">Source code</a> <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/7a09cc9f03d0d002806fda6ff260a6affab4b2d62d83f6ac31f18d7cd663221b637a496c40a9971536a59be4545f7740fe514ddc83bd808bd0fb3c1f2e14b8af-index.html\">index.html template</a>",
+    "description": "Site: <a target=\"_blank\" href=\"http://short-url.p.tjctf.org/\">short-url.p.tjctf.org</a>. <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/eb4919e722b36ee9ce25f02b2289ddddaffc6e27f12946f76ff7194dbf00a0f937c8f98bccfb3382af3ae07553e37b571cfe8074629f9f271b4b4970d4b0ddbc-server.py\">Source code</a> <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/7a09cc9f03d0d002806fda6ff260a6affab4b2d62d83f6ac31f18d7cd663221b637a496c40a9971536a59be4545f7740fe514ddc83bd808bd0fb3c1f2e14b8af-index.html\">index.html template</a>",
     "threshold": 0,
     "weightmap": {},
     "hint": "You need to find the secret url."
