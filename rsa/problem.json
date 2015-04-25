@@ -3,7 +3,7 @@
   "score": 35,
   "category": "Crypto",
   "grader": "rsa/grader.py",
-  "description": "You've stumbled upon a flag! It's been encrypted with RSA, but you should be able to get it: <a target=\"_blank\" href=\"82ffe167d191216ea3e9e97c35625e5029a03c1f722ee18b60dad002e8b4462597f6508313cae85ca8696cc9b5a6eb2b444e787fa7b4fc31f31220be3d9888a9-source\">Download</a>",
+  "description": "You've stumbled upon a flag! It's been encrypted with RSA, but you should be able to get it: <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/82ffe167d191216ea3e9e97c35625e5029a03c1f722ee18b60dad002e8b4462597f6508313cae85ca8696cc9b5a6eb2b444e787fa7b4fc31f31220be3d9888a9-source\">Download</a>",
   "threshold": 0,
   "weightmap": {},
   "hint": "Read up on RSA."
