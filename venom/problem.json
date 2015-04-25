@@ -1,0 +1,10 @@
+{
+  "name": "VenoM",
+  "score": "<<this will be finalized after testing>>",
+  "category": "Reversing",
+  "grader": "venom/grader.py",
+  "description": "I felt particularily evil when writing this :)<br><a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/767b8e40bdbebb584720ed16a637178ce91f55fe852b08640625f74e8961aa52d785ca0e1ada47075c0a66a76737706e8207b1227cce2a67a24061326be0e692-venom\">Download</a>",
+  "threshold": 0,
+  "weightmap": {},
+  "hint": "WE NEED TO GO DEEPER"
+}

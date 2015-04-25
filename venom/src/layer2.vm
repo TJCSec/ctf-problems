@@ -1,0 +1,80 @@
+# LCG: m = 256, a = 57, c = 49, x0 = 42
+# Encrypted password (stored in cmp opcodes):
+# [72, 191, 87, 4, 157, 222, 212, 69, 43, 44, 174, 252, 74, 148, 6, 228, 22, 4, 4, 105, 59, 186, 87, 137, 206, 54, 41]
+# (flag xored with lcg)
+
+# opcodes:
+# push val
+#   push val onto the stack
+# get val
+#   push value at val onto the stack
+# store val
+#   pop value, store at val
+# nor
+#   nor two top (universal gate)
+# add
+#   add two top (wraps around at byte)
+# mult
+#   multiply two top (wraps around at byte)
+# ret
+#   stop and return value
+# cmp val
+#   set zero flag to comparison
+# input
+#   push input byte onto the stack
+
+# stack:
+# [lcg: X A C] [check byte] [misc registers?]
+
+# overview:
+# load initial data into stack
+# for each character in encrypted password (unroll this loop)
+#   get input byte
+#   xor with lcg
+#   cmp with password byte
+#   or result with check byte
+#   step lcg
+
+# and: (A nor A) nor (B nor B)
+# xor: (A and B) nor (A nor B)
+#      ((A nor A) nor (B nor B)) nor (A nor B)
+
+push 42
+push 57
+push 49
+push 0
+
+# for i in [72, 191, 87, 4, 157, 222, 212, 69, 43, 44, 174, 252, 74, 148, 6, 228, 22, 4, 4, 105, 59, 186, 87, 137, 206, 54, 41]
+# input 0/1
+input
+get 0
+get 0
+nor
+get 4
+get 4
+nor
+nor
+get 0
+get 4
+nor
+nor
+cmp i
+
+# ???
+get 3
+nor
+get 5
+nor
+store 3
+store 4 # pop
+# ???
+
+get 0
+get 1
+mult
+get 2
+add
+mod
+store 0
+
+ret
