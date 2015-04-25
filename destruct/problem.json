@@ -3,7 +3,7 @@
   "score": 45,
   "category": "Binary Exploitation",
   "grader": "destruct/grader.py",
-  "description": "nc blah blah<br>Source: <a href=\"http://cdn.tjctf.org/problems/b181aa97c66411e92b510137cf90ab790e03222724569a6e38aefaabcdda086612a3a9663a2ffeb709cf97d3485fd2c85c09868d0553d6ddf988fe7097b391dd-destruct.c\">destruct.c</a>",
+  "description": "nc p.tjctf.org 8085<br>Source: <a href=\"http://cdn.tjctf.org/problems/b181aa97c66411e92b510137cf90ab790e03222724569a6e38aefaabcdda086612a3a9663a2ffeb709cf97d3485fd2c85c09868d0553d6ddf988fe7097b391dd-destruct.c\">destruct.c</a>",
   "threshold": 0,
   "weightmap": {},
   "hint": "If only there was a way to get that canary..."
