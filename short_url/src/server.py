@@ -1,13 +1,26 @@
 from flask import Flask
 from flask import abort, request, redirect, render_template, url_for, session
+from Crypto.Cipher import AES
 import re
 
 
 app = Flask(__name__)
 app.secret_key = 'SEO*DHoinsbf9g*^FGUSOCH973b9wsef'
 
-secret_url = "http://pastebin.com/CX8CW6aY"  # redact
+secret_url = "http://pastebin.com/DVbG7DjV"  # redact
 
+BS = 16
+pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS) 
+unpad = lambda s : s[:-ord(s[len(s)-1:])]
+
+
+def enc(lasturl):
+    obj = AES.new(app.secret_key)
+    return obj.encrypt(pad(lasturl))
+
+def dec(lasturl):
+    obj = AES.new(app.secret_key)
+    return unpad(obj.decrypt(lasturl))
 
 def url_valid(url):
     # Ripped from Django
@@ -45,7 +58,7 @@ def shorten_url(s, url):
     a1 = "0123456789"
     a2 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-    seed = int(base_conv(s.get("last_url","fabcab"), a2, a1))
+    seed = int(base_conv(dec(s.get("last_url",enc("fabcab"))), a2, a1))
 
     a = 9533525225  # redact
     c = 42933  # redact
@@ -55,7 +68,7 @@ def shorten_url(s, url):
     v2 = base_conv(v1, a1, a2)
 
     s[v2] = url
-    s["last_url"] = v2
+    s["last_url"] = enc(v2)
     s["num_shortened"] = s.get("num_shortened", 0) + 1
 
     return v2
@@ -111,7 +124,7 @@ def check_session(s):
         s["num_shortened"] = 0
 
     if "last_url" not in s:
-        s["last_url"] = "fabcab"
+        s["last_url"] = enc("fabcab")
 
 
 if __name__ == "__main__":
