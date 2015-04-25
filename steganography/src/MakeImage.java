@@ -8,8 +8,8 @@ public class MakeImage
 {
 	public static void main(String args[]) throws Exception
 	{
-		byte[] bytes = new byte[]{(byte)62,(byte)42,(byte)37,(byte)85,(byte)63,(byte)94,(byte)118,(byte)106};
-		BufferedImage img = make(new String(bytes));
+		//byte[] bytes = new byte[]{(byte)62,(byte)42,(byte)37,(byte)85,(byte)63,(byte)94,(byte)118,(byte)106};
+		BufferedImage img = make(new String("qQmNin3!"));
 		ImageIO.write(img,"png",new File("image.png"));
 	}
 	public static BufferedImage make(String s)

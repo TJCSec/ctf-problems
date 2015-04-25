@@ -1,9 +1,9 @@
 {
   "name": "Path Crosser",
-  "score": 70,
-  "category": "cryptography" ,
+  "score": 80,
+  "category": "Cryptography" ,
   "grader": "PathCrosser/grader.py",
-  "description": "I can't stop playing <a href='http://cdn.tjctf.org/problems/1a6000c765f7e3d5c5c9104b0a2bd29c1a01e9a8c6e4fe0c164130f9d12ba3b1e420af77585ca0280fecd2465506a956fcc8418c2635576cbc7f0b1dc64debff-second-pass.tar.gz'>this</a> game. I'm close, but I can't seem to beat it. Would you help me out?",
+  "description": "I can't stop playing <a target=\"_blank\" href='http://cdn.tjctf.org/problems/1a6000c765f7e3d5c5c9104b0a2bd29c1a01e9a8c6e4fe0c164130f9d12ba3b1e420af77585ca0280fecd2465506a956fcc8418c2635576cbc7f0b1dc64debff-second-pass.tar.gz'>this</a> game. I'm close, but I can't seem to beat it. Would you help me out?",
   "threshold": 0,
   "weightmap": {},
   "hint": "What conditions need to be met for you to get across?"

@@ -1,9 +1,9 @@
 {
   "name": "Poland Can Into Code",
-  "score": 140,
-  "category": "miscellaneous" ,
+  "score": 130,
+  "category": "Forensics" ,
   "grader": "poland-can-into-code/grader.py",
-  "description": "Polan of findings sneaky picture. Of thinkings picture may take password, but Polan cannot into knowings how works",
+  "description": "Polan of findings sneaky <a target=\"_blank\" href=\"cdn.tjctf.org/problems/fac5313e902d5b07092aa2ce15bf14bbdcf9306c178026e5df46df3d981af7b72f85b3705b7a8c85bdda0de938d0ec17e6d5080148c25572d36345cae020c64f-polandball_mess.bmp\">picture</a>. Of thinkings picture may take password, but Polan cannot into knowings how works",
   "threshold": 0,
   "weightmap": {},
   "hint": "Python has some x-tremely strange flags"

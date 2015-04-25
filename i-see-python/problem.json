@@ -1,9 +1,9 @@
 {
     "name": "I See Python",
-    "score": "",
-    "category": "Reversing",
+    "score": 40,
+    "category": "Reverse Engineering",
     "grader": "i-see-python/grader.py",
-    "description": "I lost my flag decryptor, but I found <a href=\"http://cdn.tjctf.org/problems/a00beda6e22ac969b3107fdc85dcf0acaea8947873d39d9662a9c7ffe7405b86b0d2085da50bce6d89bba3c2cb57d37d1146b4ac5be4ac1dd396e6b9e529bebe-i_see_python.pyc\">this compiled version</a>.",
+    "description": "I lost my flag decryptor, but I found <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/a00beda6e22ac969b3107fdc85dcf0acaea8947873d39d9662a9c7ffe7405b86b0d2085da50bce6d89bba3c2cb57d37d1146b4ac5be4ac1dd396e6b9e529bebe-i_see_python.pyc\">this compiled version</a>.",
     "threshold": 0,
     "weightmap": {},
     "hint": "Google is your friend"

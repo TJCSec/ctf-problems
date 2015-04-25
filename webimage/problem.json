@@ -1,9 +1,9 @@
 {
   "name": "Web Image",
   "score": 50,
-  "category": "web-exploitation" ,
+  "category": "Web Exploitation" ,
   "grader": "webimage/grader.py",
-  "description": "Check out this awesome website that allows you to look at pictures. Which one is your favorite?",
+  "description": "Check out <a target=\"_blank\" href=\"http://webimage.p.tjctf.org\">this</a> awesome website that allows you to look at pictures. Which one is your favorite?",
   "threshold": 0,
   "weightmap": {},
   "hint": "Why does it not reload when you fetch the image?"

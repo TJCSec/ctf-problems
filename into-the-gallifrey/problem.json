@@ -1,9 +1,9 @@
 {
   "name": "Into the Gallifrey",
-  "score": 70,
-  "category": "cryptography" ,
+  "score": 50,
+  "category": "Cryptography" ,
   "grader": "into-the-gallifrey/grader.py",
-  "description": "The Doctor has run off, but we need to get into the TARDIS. Fortunately, he left this message for us. See if you can decode it.",
+  "description": "The Doctor has run off, but we need to get into the TARDIS. Fortunately, he left <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/b0981112a056ff73ddd466ab9637872e341031a8a3fa82508eb286c6fe331bd295dbca765be93723083a163d6536f29d655f35f3c475fa1986d1e24799e6db86-Gallifreyan_Better.svg\">this</a> message for us. See if you can decode it.",
   "threshold": 0,
   "weightmap": {},
   "hint": "I think he said to start at 90 degrees and go counterclockwise."

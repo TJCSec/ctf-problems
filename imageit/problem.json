@@ -1,9 +1,9 @@
 {
     "name": "imageit",
-    "score": "<this will be finalized after testing>",
-    "category": "Web",
+    "score": 80,
+    "category": "Web Exploitation",
     "grader": "imageit/grader.py",
-    "description": "Check out my rad image upload site! It stores all your cats, and more! <a href='http://imageit.p.tjctf.org/'>imageit.p.tjctf.org</a>, Source: <a href='http://cdn.tjctf.org/problems/7317fe90e90984cb3094f5ae3749a210430265c3ddf4d77e6859491ac2fb2d1842785440be5eabb6761138cec569131e3c55d504a1ded5883bdb35afbf983ff1-imageit.tar.gz'>7317fe90e90984cb3094f5ae3749a210430265c3ddf4d77e6859491ac2fb2d1842785440be5eabb6761138cec569131e3c55d504a1ded5883bdb35afbf983ff1-imageit.tar.gz</a>",
+    "description": "Check out my rad image upload site! It stores all your cats, and more! <a target=\"_blank\" href='http://imageit.p.tjctf.org/'>imageit.p.tjctf.org</a>, Source: <a target=\"_blank\" href='http://cdn.tjctf.org/problems/7317fe90e90984cb3094f5ae3749a210430265c3ddf4d77e6859491ac2fb2d1842785440be5eabb6761138cec569131e3c55d504a1ded5883bdb35afbf983ff1-imageit.tar.gz'>imageit.tar.gz</a>",
     "threshold": 0,
     "weightmap": {},
     "hint": "What web server is the problem running?"

@@ -1,9 +1,9 @@
 {
     "name": "Echoes Into Eternity",
-    "score": "",
-    "category": "Misc",
+    "score": 120,
+    "category": "Miscellaneous",
     "grader": "echoes-into-eternity/grader.py",
-    "description": "I lost my memes when I went <a href=\"http://cdn.tjctf.org/problems/1638661045efbb21d0a2297a5eb096e5a00b3b36fef9445b85a6d0cc9b102066725f94c542b7a302e26cac3074d6bbbea073c6b53ee4f8a183264843e5124dd0-memes.jpg\">to space.</a> Can you help me find them?",
+    "description": "I lost my memes when I went <a target=\"_blank\" href=\"http://cdn.tjctf.org/problems/1638661045efbb21d0a2297a5eb096e5a00b3b36fef9445b85a6d0cc9b102066725f94c542b7a302e26cac3074d6bbbea073c6b53ee4f8a183264843e5124dd0-memes.jpg\">to space.</a> Can you help me find them?",
     "threshold": 0,
     "weightmap": {},
     "hint": "uggcf://erqqvg.pbz/e/qnax_zrzr"
