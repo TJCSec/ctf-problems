@@ -5,6 +5,7 @@ import pyotp
 import datetime
 app = Flask(__name__)
 keys = open('/home/app/keys_ch480thn08y0nUW04M9W904FJ0294JON.txt','r').read().split('\n')
+app.secret_key = 'UibnN*9b7fV(d*(8V*%d57B#$%^&daU'
 
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -25,5 +26,4 @@ def index():
     return render_template('index.html', session=session)
 
 if __name__ == '__main__':
-    app.secret_key = 'UibnN*9b7fV(d*(8V*%d57B#$%^&daU'
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',debug=True)
