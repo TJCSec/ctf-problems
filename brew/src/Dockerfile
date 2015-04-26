@@ -5,3 +5,4 @@ RUN useradd -m app
 WORKDIR /home/app
 CMD sudo -u app /home/app/app.py
 ADD ./ /home/app/
+RUN chmod -R ugo-w /home/app

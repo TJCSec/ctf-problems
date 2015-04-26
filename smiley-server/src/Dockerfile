@@ -8,4 +8,5 @@ CMD sudo xinetd -dontfork
 RUN echo 'ctf 1337/tcp' >> /etc/services
 ADD ./etc/ /etc/
 ADD ./ /home/app
+RUN chmod -R ugo-w /home/app
 

@@ -6,4 +6,5 @@ RUN useradd -m app
 WORKDIR /home/app
 CMD sudo -u app /home/app/wrapper
 ADD ./ /home/app/
+RUN chmod -R ugo-w /home/app
 
