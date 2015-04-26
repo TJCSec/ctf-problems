@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import abort, request, redirect, render_template, url_for, session
 from Crypto.Cipher import AES
+from pickle import loads, dumps
 import re
 
 
@@ -67,7 +68,9 @@ def shorten_url(s, url):
     v1 = str((a * seed + c) % m)
     v2 = base_conv(v1, a1, a2)
 
-    s[v2] = url
+    existurls = loads(dec(s["urls"]))
+    existurls[v2] = url
+    s["urls"] = enc(dumps(existurls))
     s["last_url"] = enc(v2)
     s["num_shortened"] += 1
 
@@ -83,7 +86,7 @@ def index():
 
     context = {
         "hits": hits,
-        "shortened": len(session.keys()) - 4,
+        "shortened": len(loads(dec(session["urls"]))),
     }
 
     if request.method == "GET":
@@ -109,21 +112,22 @@ def follow_shortened_url(url_hash):
 
     if not re.match("^[a-zA-Z0-9]+$", url_hash):
         abort(404)
-    url = session.get(url_hash)
+    url = loads(dec(session["urls"])).get(url_hash)
     if url:
         return redirect(url)
     else:
         abort(404)
 
 def check_session(s):
-    if "updated" not in s:
+    if "updated2" not in s:
         s.clear()
         
     if "hit_count" not in s:
         s["hit_count"] = 0
         s["num_shortened"] = 0
         s["last_url"] = enc("fabcab")
-        s["updated"] = True
+        s["urls"] = enc(dumps({}))
+        s["updated2"] = True
         shorten_url(s, secret_url)
     
 if __name__ == "__main__":
