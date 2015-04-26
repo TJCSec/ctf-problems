@@ -10,7 +10,7 @@ app.secret_key = 'UibnN*9b7fV(d*(8V*%d57B#$%^&daU'
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        password = request.form['password']
+        password = request.form['password'].lstrip('0')
         if 'level' not in session:
             session['level'] = 0
         totp = pyotp.TOTP(keys[session['level']])
