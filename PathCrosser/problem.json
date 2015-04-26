@@ -3,7 +3,7 @@
   "score": 80,
   "category": "Cryptography" ,
   "grader": "PathCrosser/grader.py",
-  "description": "I can't stop playing <a target=\"_blank\" href='http://cdn.tjctf.org/problems/1a6000c765f7e3d5c5c9104b0a2bd29c1a01e9a8c6e4fe0c164130f9d12ba3b1e420af77585ca0280fecd2465506a956fcc8418c2635576cbc7f0b1dc64debff-second-pass.tar.gz'>this</a> game. I'm close, but I can't seem to beat it. Would you help me out?",
+  "description": "I can't stop playing <a target=\"_blank\" href='http://cdn.tjctf.org/problems/1a6000c765f7e3d5c5c9104b0a2bd29c1a01e9a8c6e4fe0c164130f9d12ba3b1e420af77585ca0280fecd2465506a956fcc8418c2635576cbc7f0b1dc64debff-second-pass.tar.gz'>this</a> game. I'm close, but I can't seem to beat it. Would you help me out? (Linux version: <a target=\"_blank\" href='http://cdn.tjctf.org/problems/8fd541f8a05faf9a6b551b551c5fc225a36e3516e38c0df57eebe9e41dc55e16d532211b9afea498aa928a6c87219e83f81ffdfe82801e4ba11df959bf8b4015-second-pass-linux.tar.gz'>Download</a>)",
   "threshold": 0,
   "weightmap": {},
   "hint": "What conditions need to be met for you to get across?"
