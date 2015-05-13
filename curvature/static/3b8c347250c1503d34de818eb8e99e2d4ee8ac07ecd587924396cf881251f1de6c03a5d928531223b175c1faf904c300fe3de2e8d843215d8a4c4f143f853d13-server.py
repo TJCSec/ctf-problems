@@ -23,7 +23,7 @@ def egcd(a, b):
 def inv(a):
     gcd, x, y = egcd(a % P, P)
     if gcd != 1:
-        raise Exception('No modular inverse')
+        return -1
     else:
         return x % P
 
@@ -32,7 +32,10 @@ def add(a, b):
         return b
     if b == 0:
         return a
-    l = ((b[1] - a[1]) * inv(b[0] - a[0])) % P
+    i = inv(b[0] - a[0])
+    if i == -1:
+        return 0
+    l = ((b[1] - a[1]) * i) % P
     x = (l*l - a[0] - b[0]) % P
     y = (l*(a[0] - x) - a[1]) % P
     return (x,y)
@@ -40,7 +43,10 @@ def add(a, b):
 def double(a):
     if a == 0:
         return a
-    l = ((3*a[0]*a[0] + A) * inv(2*a[1])) % P
+    i = inv(2*a[1])
+    if i == -1:
+        return 0
+    l = ((3*a[0]*a[0] + A) * i) % P
     x = (l*l - 2*a[0]) % P
     y = (l*(a[0] - x) - a[1]) % P
     return (x,y)
@@ -69,9 +75,12 @@ class Handler(SocketServer.BaseRequestHandler):
         while True:
             point = self.request.recv(4096)
             x, y = [int(i) for i in point.strip().split()]
-            x2, y2 = multiply((x, y), FLAG)
+            mpoint = multiply((x, y), FLAG)
             self.request.send("Your point:\n")
-            self.request.send("(%d, %d)\n" % (x2, y2))
+            if mpoint == 0:
+                self.request.send("[point at infinity]\n")
+            else:
+                self.request.send("(%d, %d)\n" % mpoint)
 
 server = ThreadedServer(('0.0.0.0', PORT), Handler)
 server_thread = threading.Thread(target=server.serve_forever)
